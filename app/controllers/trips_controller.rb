@@ -6,6 +6,7 @@ class TripsController < ApplicationController
   def show
     @trip = Trip.find(params[:id])
     @country = @trip.country
+    @categories = Category.all
   end
 
   def new
