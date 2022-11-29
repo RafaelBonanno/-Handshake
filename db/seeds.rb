@@ -70,6 +70,11 @@ my_trip = Trip.create!(
   country_id: 1
 )
 
+france = Country.create!(
+  language: "French",
+  name: "France"
+)
+
 phrase_1 = Phrase.create!(
   content: "How much is this?",
   time_day: 1,

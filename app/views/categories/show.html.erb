@@ -6,7 +6,24 @@
 <%= tip.content %>
 <% end %>
 
-<h2>Phrases:</h2>
-<% @phrases.each do |phrase| %>
-<%= phrase.content %>
-<% end %>
+    <h2>Phrases:</h2>
+    <% @phrases.each do |phrase| %>
+    <% @tips.each do |tip| %>
+    <div class="scene">
+    <div class="flipcard" data-controller="flip-phrases" data-action="click->flip-phrases#flipPhrase" data-flip-phrases-target="flipcard">
+      <div class="flipcard__face flipcard__face--front">
+        <p class="flipcard-text"><%= phrase.content %></p>
+      </div>
+      <div class="flipcard__face flipcard__face--back">
+        <p class="flipcard-text"><%= tip.content %></p>
+                <%# <p><%= phrase.phrase_country.content %>
+      </div>
+    </div>
+    </div>
+    <% end %>
+    <% end %>
+
+
+<%# HERE IS THE FLIPPING CARD HTML %>
+
+<p>Click flipcard to flip.</p>

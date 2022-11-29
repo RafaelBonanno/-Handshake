@@ -1,0 +1,55 @@
+body { font-family: sans-serif; }
+
+.scene {
+  width: 200px;
+  height: 260px;
+/*   border: 1px solid #CCC; */
+  margin: 40px 0;
+  perspective: 600px;
+}
+
+.flipcard {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 1s;
+  align-items: center;
+  justify-content: center;
+}
+
+.flipcard-text{
+  word-break: break-word;
+  vertical-align: center;
+}
+
+.flipcard.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+.flipcard__face {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 10px;
+  backface-visibility: hidden;
+  align-items: center;
+  vertical-align: center;
+}
+
+.flipcard__face--front {
+  background: crimson;
+}
+
+.flipcard__face--back {
+  background: slateblue;
+  transform: rotateY(180deg);
+}
