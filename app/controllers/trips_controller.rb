@@ -1,4 +1,5 @@
 class TripsController < ApplicationController
+
   def index
     @trips = Trip.all
   end
@@ -15,11 +16,12 @@ class TripsController < ApplicationController
   end
 
   def create
+
     @trip = Trip.new(trip_params)
-    @trip.country = @country
+    @trip.country = Country.find(params[:trip][:country_id])
     @trip.user = current_user
     if @trip.save
-      redirect_to trips_path(@trip)
+      redirect_to trip_path(@trip)
     else
       render :new, status: :unprocessable_entity
     end

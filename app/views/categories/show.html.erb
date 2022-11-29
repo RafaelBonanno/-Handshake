@@ -6,7 +6,9 @@
 <%= tip.content %>
 <% end %>
 
-<h2>Phrases:</h2>
-<% @phrases.each do |phrase| %>
-<%= phrase.content %>
-<% end %>
+<div data-controller="flip-phrases">
+  <h2>Phrases:</h2>
+  <% @phrases.each do |phrase| %>
+    <p data-flip-phrases-target="phrase"><%= phrase.content %></p>
+  <% end %>
+  </div>

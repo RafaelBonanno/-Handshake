@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import FlipPhrasesController from "./flip_phrases_controller"
+application.register("flip-phrases", FlipPhrasesController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
