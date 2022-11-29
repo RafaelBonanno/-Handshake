@@ -11,6 +11,7 @@ class TripsController < ApplicationController
 
   def new
     @trip = Trip.new
+    @countries = Country.all
   end
 
   def create

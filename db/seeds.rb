@@ -61,3 +61,7 @@ german_tip = Tip.create!(
   category_id: 1,
   country_id: 1
 )
+france = Country.new(
+  language: "French"
+)
+
