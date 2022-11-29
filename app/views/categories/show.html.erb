@@ -6,9 +6,9 @@
 <%= tip.content %>
 <% end %>
 
-<div data-controller="phrases-cards">
+<div data-controller="flip-phrases">
   <h2>Phrases:</h2>
   <% @phrases.each do |phrase| %>
-    <p data-movie-card-target="content"><%= phrase.content %></p>
+    <p data-flip-phrases-target="phrase"><%= phrase.content %></p>
   <% end %>
   </div>
