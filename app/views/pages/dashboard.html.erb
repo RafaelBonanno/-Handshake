@@ -1,0 +1,26 @@
+<div class="banner">
+    MY TRIPS
+</div>
+<% if @trips.empty? %>
+  <div class="container-dashboard">
+    <div class="text-dashboard">
+      <h1> You have no trips yet !</h1>
+    </div>
+  </div>
+<% end %>
+<%# if @bookings_pending.present? %>
+<div class="cards-dashboard">
+  <% @trips.each do |trip| %>
+    <div class ="card-trip">
+        <div class="card-dashboard d-block" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://wallpaperaccess.com/full/1224372.jpg)">
+          <%= link_to "You trip to #{trip.country}", trip_path(trip) %>
+          <%# <% if Booking.where(spaceship_id: @bookings[0].spaceship_id)[0].present?%>
+          <div class="card-trip-infos">
+          </div>
+        </div>
+    </div>
+  <% end %>
+  <%= link_to new_trip_path, class: "d-flex justify-content-center align-items-center btn btn-primary" do %>
+    <p>Add a new trip !</p>
+  <% end %>
+</div>

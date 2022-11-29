@@ -5,4 +5,8 @@ class PagesController < ApplicationController
     @countries = Country.all
     @trip = Trip.new
   end
+
+  def dashboard
+    @trips = Trip.where(user_id: current_user)
+  end
 end
