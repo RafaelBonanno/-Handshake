@@ -49,19 +49,12 @@ categories << Category.create!(
 )
 
 germany = Country.create!(
+  name: "Germany",
   language: "German"
 )
 
 france = Country.create!(
-  language: "French"
-)
-
-german_tip = Tip.create!(
-  content: "Supermarkets are closed in Germany on Sunday",
-  category_id: 1,
-  country_id: 1
-)
-france = Country.new(
-  language: "French"
+  language: "French",
+  name: "France"
 )
 

@@ -3,6 +3,6 @@
  <%= simple_form_for @trip do |f| %>
           <%= f.input :start_date %>
           <%= f.input :end_date %>
-          <%= f.association :country.language %>
+          <%= f.association :country %>
           <%= f.submit class: 'btn btn-flat' %>
         <% end %>
