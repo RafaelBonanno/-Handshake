@@ -1,0 +1,8 @@
+<h1> Going away ? Pretty cool !</h1>
+<h2>Let us know how long you're out so that we can help you the best!!</h2>
+ <%= simple_form_for @trip do |f| %>
+          <%= f.input :start_date %>
+          <%= f.input :end_date %>
+          <%= f.association :country.language %>
+          <%= f.submit class: 'btn btn-flat' %>
+        <% end %>
