@@ -2,9 +2,20 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="flip-phrases"
 export default class extends Controller {
-  static targets = ["phrase"]
+  static targets = ["flipcard"]
   connect() {
-    console.log(this.contentTarget)
-    console.log("HEYYYY WHATSGOOD BROTHER")
   }
+
+  flipPhrase() {
+    this.flipcardTarget.classList.toggle('is-flipped')
+  }
+
 }
+
+// var cards = document.querySelectorAll('.card');
+
+// [...cards].forEach((card)=>{
+//   card.addEventListener( 'click', function() {
+//     card.classList.toggle('is-flipped');
+//   });
+// });
