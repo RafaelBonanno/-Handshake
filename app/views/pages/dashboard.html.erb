@@ -7,20 +7,84 @@
       <h1> You have no trips yet !</h1>
     </div>
   </div>
-<% end %>
-<%# if @bookings_pending.present? %>
-<div class="cards-dashboard">
-  <% @trips.each do |trip| %>
-    <div class ="card-trip">
-        <div class="card-dashboard d-block" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://wallpaperaccess.com/full/1224372.jpg)">
-          <%= link_to "You trip to #{trip.country}", trip_path(trip) %>
-          <%# <% if Booking.where(spaceship_id: @bookings[0].spaceship_id)[0].present?%>
-          <div class="card-trip-infos">
+<% else %>
+  <div class="card-group">
+  <% current_user.trips.each do |trip| %>
+    <div class="card-trip">
+          <img src="https://wallpaperaccess.com/full/1224372.jpg" data-bs-toggle="modal" data-bs-target="#tripModal<%= trip.id %>"/>
+      <div class="card-trip-infos">
+        <div>
+          <h2>
+            From the <%= booking.start_date.strftime("%A %e %m %Y") %>
+            <br>
+            to the <%= booking.end_date.strftime("%A %e %m %Y") %>
+          </h2>
+        </div>
+        <h3> Your destination ! </h3>
+        <p> Apparently, you are going to <strong><%= trip.country %></strong></p>
+        </h2>
+      </div>
+    </div>
+    <div class="modal fade" id="tripModal<%= trip.id %>" tabindex="-1" aria-labelledby="tripModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Your trip to <%= trip.country %></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p><strong>Details</strong></p>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <br>
+              <div class="pb-4">
+                <p><strong>Start date</strong></p>
+                <%= trip.start_date.strftime("%A %e %m %Y") %>
+              </div>
+              <div class="pb-4">
+                <p><strong>Return date</strong></p>
+                <%= trip.end_date.strftime("%A %e %m %Y") %>
+              </div>
+              <%# <div class="pb-4">
+                <p><strong>Status</strong></p>
+                <% if trip.status == "pending" %>
+                  <%# <p>coming soon !</p> %>
+                <%# <% elsif trip.status == "archived" %>
+                  <%# <p>you came back already `;)` </p> %>
+                <%# <% else %>
+                  <%# <p>how's the trip going?</p> %>
+                <%# <% end %>
+              <%# </div> %>
+            </ul>
+            <br>
+          </div>
+          <div class="modal-footer pb-4 justify-content-center">
+            <%= link_to "Edit your trip !", edit_trip_path(trip), class: "btn btn-primary rounded-pill" %>
+            <%= link_to "Cancel this trip", trip_path(trip), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger rounded-pill text-white" %>
           </div>
         </div>
+      </div>
     </div>
   <% end %>
-  <%= link_to new_trip_path, class: "d-flex justify-content-center align-items-center btn btn-primary" do %>
+</div>
+<% end %>
+<%= link_to new_trip_path, class: "d-flex justify-content-center align-items-center btn btn-primary" do %>
     <p>Add a new trip !</p>
   <% end %>
 </div>
+
+<%# <div class="cards-dashboard"> %>
+  <%# <% @trips.each do |trip| %>
+    <%# <div class ="card-trip">
+        <div class="card-dashboard d-block" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://wallpaperaccess.com/full/1224372.jpg)">
+          <%= link_to "You trip to #{trip.country}", trip_path(trip) %>
+          <%# <% if Booking.where(spaceship_id: @bookings[0].spaceship_id)[0].present?%>
+          <%# <div class="card-trip-infos"> %>
+          <%# </div> %>
+        <%# </div> %>
+    <%# </div> %>
+  <%# <% end %>
+  <%# <%= link_to new_trip_path, class: "d-flex justify-content-center align-items-center btn btn-primary" do %>
+    <%# <p>Add a new trip !</p> %>
+  <%# <% end %>
+<%# </div> %>
