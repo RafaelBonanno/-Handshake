@@ -1,0 +1,12 @@
+<%= @category.name %>
+<%= @trip.country %>
+
+
+<% @tips.each do |tip| %>
+<%= tip.content %>
+<% end %>
+
+<h2>Phrases:</h2>
+<% @phrases.each do |phrase| %>
+<%= phrase.content %>
+<% end %>
