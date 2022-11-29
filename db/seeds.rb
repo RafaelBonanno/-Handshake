@@ -14,8 +14,8 @@ Country.destroy_all
 
 
 user = User.create!(
-  email: "traveler@handshake.com",
-  password: "1234567"
+  email: "traveller@handshake.com",
+  password: "123456"
 )
 
 categories = []
@@ -49,8 +49,25 @@ categories << Category.create!(
 )
 
 germany = Country.create!(
-  name: "Germany",
-  language: "German"
+  language: "German",
+  name: "Germany"
+)
+
+german_tip = Tip.create!(
+  content: "Supermarkets are closed in Germany on Sunday",
+  category_id: 1,
+  country_id: 1
+)
+france = Country.create!(
+  language: "French",
+  name: "France"
+)
+
+my_trip = Trip.create!(
+  start_date: "29/11/2022",
+  end_date: "30/11/2022",
+  user_id: 1,
+  country_id: 1
 )
 
 france = Country.create!(
@@ -58,3 +75,8 @@ france = Country.create!(
   name: "France"
 )
 
+phrase_1 = Phrase.create!(
+  content: "How much is this?",
+  time_day: 1,
+  category_id: 1
+)
