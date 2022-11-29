@@ -50,6 +50,7 @@ gem "sassc-rails"
 
 gem "devise"
 gem "autoprefixer-rails"
+gem "font-awesome-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
 group :development, :test do
