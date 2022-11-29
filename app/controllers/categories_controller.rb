@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
-    @trip = Trip.find(params[:id])
+    @trip = Trip.find(params[:trip_id])
     @country = @trip.country
     @tips = Tip.where(category: @category, country: @country)
     @phrases = Phrase.where(category_id: @category)
