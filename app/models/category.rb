@@ -1,4 +1,4 @@
 class Category < ApplicationRecord
   has_many :phrases
-  Has_many :tips
+  has_many :tips
 end
