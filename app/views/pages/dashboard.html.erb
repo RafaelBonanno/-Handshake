@@ -1,76 +1,72 @@
-<div class="banner">
-    MY TRIPS
+<div class="container greeting m-3">
+  <h4>Howdy 👋🏼 <%= current_user.username %>!</h4>
 </div>
-<% if @trips.empty? %>
-  <div class="container-dashboard">
-    <div class="text-dashboard">
-      <h1> You have no trips yet !</h1>
+  <% if @trips.empty? %>
+    <div class="container-dashboard">
+      <div class="text-dashboard">
+        <h1> You have no trips yet !</h1>
+      </div>
+  <% else %>
+    <% current_user.trips.each do |trip| %>
+<%= link_to trip_path(trip) do%>
+<div class="card-product">
+  <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" />
+  <div class="card-product-infos">
+    <h2>Your trip to <%= trip.country.name %></h2>
+    <p>From <%=trip.start_date.strftime("%A %e %m %Y")%></p>
+    <p>Until <%=trip.end_date.strftime("%A %e %m %Y")  %></p>
+<% end %>
+    <p class="btn btn-info" data-bs-toggle="modal" data-bs-target="#tripModal<%= trip.id %>">Manage this trip</p>
+  </div>
+</div>
+<div class="modal fade" id="tripModal<%= trip.id %>" tabindex="-1" aria-labelledby="tripModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Your trip to <%= trip.country.name %></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Details</strong></p>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <br>
+          <div class="pb-4">
+            <p><strong>Start date</strong></p>
+            <%= trip.start_date.strftime("%A %e %m %Y") %>
+          </div>
+          <div class="pb-4">
+            <p><strong>Return date</strong></p>
+            <%= trip.end_date.strftime("%A %e %m %Y") %>
+          </div>
+
+
+          <%# <div class="pb-4">
+            <p><strong>Status</strong></p>
+            <% if trip.status == "pending" %>
+              <%# <p>coming soon !</p> %>
+            <%# <% elsif trip.status == "archived" %>
+              <%# <p>you came back already `;)` </p> %>
+            <%# <% else %>
+              <%# <p>how's the trip going?</p> %>
+            <%# <% end %>
+          <%# </div> %>
+        </ul>
+      </div>
+      <div class="modal-footer pb-4 justify-content-center">
+        <%= link_to "Edit your trip", edit_trip_path(trip), class: "btn btn-primary rounded-pill" %>
+        <%= link_to "Cancel this trip", trip_path(trip), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger rounded-pill text-white" %>
+      </div>
     </div>
   </div>
-<% else %>
-  <div class="card-group">
-  <% current_user.trips.each do |trip| %>
-    <div class="card-trip">
-          <img src="https://wallpaperaccess.com/full/1224372.jpg" data-bs-toggle="modal" data-bs-target="#tripModal<%= trip.id %>"/>
-      <div class="card-trip-infos">
-        <div>
-          <h2>
-            From the <%= trip.start_date.strftime("%A %e %m %Y") %>
-            <br>
-            to the <%= trip.end_date.strftime("%A %e %m %Y") %>
-          </h2>
-        </div>
-        <h3> Your destination ! </h3>
-        <p> Apparently, you are going to <strong><%= link_to trip.country.name, trip_path(trip) %></strong></p>
-        </h2>
-      </div>
-    </div>
-    <div class="modal fade" id="tripModal<%= trip.id %>" tabindex="-1" aria-labelledby="tripModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Your trip to <%= trip.country.name %></h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p><strong>Details</strong></p>
-            <ul class="list-group">
-              <li class="list-group-item">
-                <br>
-              <div class="pb-4">
-                <p><strong>Start date</strong></p>
-                <%= trip.start_date.strftime("%A %e %m %Y") %>
-              </div>
-              <div class="pb-4">
-                <p><strong>Return date</strong></p>
-                <%= trip.end_date.strftime("%A %e %m %Y") %>
-              </div>
-              <%# <div class="pb-4">
-                <p><strong>Status</strong></p>
-                <% if trip.status == "pending" %>
-                  <%# <p>coming soon !</p> %>
-                <%# <% elsif trip.status == "archived" %>
-                  <%# <p>you came back already `;)` </p> %>
-                <%# <% else %>
-                  <%# <p>how's the trip going?</p> %>
-                <%# <% end %>
-              <%# </div> %>
-            </ul>
-            <br>
-          </div>
-          <div class="modal-footer pb-4 justify-content-center">
-            <%= link_to "Edit your trip !", edit_trip_path(trip), class: "btn btn-primary rounded-pill" %>
-            <%= link_to "Cancel this trip", trip_path(trip), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger rounded-pill text-white" %>
-          </div>
-        </div>
-      </div>
-    </div>
-  <% end %>
 </div>
-<% end %>
-<%= link_to new_trip_path, class: "d-flex justify-content-center align-items-center btn btn-primary" do %>
-    <p>Add a new trip !</p>
+    <% end %>
+  </div>
   <% end %>
+  <%= link_to new_trip_path, class: "d-flex justify-content-center btn btn-primary rounded-pill" do %>
+      <p>Add a new trip</p>
+    <% end %>
+  </div>
 </div>
 
 <%# <div class="cards-dashboard"> %>

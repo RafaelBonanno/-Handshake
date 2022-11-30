@@ -13,7 +13,8 @@ Country.destroy_all
 
 user = User.create!(
   email: "traveller@handshake.com",
-  password: "123456"
+  password: "123456",
+  username: "Mr. Rails"
 )
 
 categories = []
