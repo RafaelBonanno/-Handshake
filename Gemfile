@@ -82,3 +82,5 @@ gem "rename"
 
 
 gem 'unsplash'
+
+gem 'simple-form-datepicker', '~> 0.1.3'
