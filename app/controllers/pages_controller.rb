@@ -7,6 +7,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    authenticate_user!
     @trips = Trip.where(user_id: current_user)
   end
 end

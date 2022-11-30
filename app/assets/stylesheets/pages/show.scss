@@ -1,6 +1,10 @@
 
 // CSS FOR THE CATEGORY PAGE
 
+.background-category{
+  border-radius: 15px, 15px;
+}
+
 .card-category {
   background-size: cover;
   background-position: center;
@@ -76,6 +80,8 @@
 .title-black {
   color: black;
 }
+
+
 
 @media all and (max-width: 500px) {
   .card-list {
