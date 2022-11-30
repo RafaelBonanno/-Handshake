@@ -10,11 +10,12 @@ Category.destroy_all
 Trip.destroy_all
 User.destroy_all
 Country.destroy_all
+PhraseCountry.destroy_all
 
 user = User.create!(
   email: "traveller@handshake.com",
   password: "123456",
-  username: "Mr. Rails"
+  username: "Mr.Rails"
 )
 
 categories = []
@@ -75,8 +76,51 @@ phrase_1 = Phrase.create!(
   category_id: 1
 )
 
+phrase_2 = Phrase.create!(
+  content: "Where can I find..?",
+  time_day: 1,
+  category_id: 1
+)
+
+phrase_3 = Phrase.create!(
+  content: "I am paying by card",
+  time_day: 1,
+  category_id: 1
+)
+
 phrase_1_1 = PhraseCountry.create!(
   content: "Wie viel kostet das?",
   phrase_id: 1,
   country_id: 1
+)
+
+phrase_1_2 = PhraseCountry.create!(
+  content: "Combien ca coute?",
+  phrase_id: 1,
+  country_id: 2
+)
+
+
+phrase_2_1 = PhraseCountry.create!(
+  content: "Wo ist..?",
+  phrase_id: 2,
+  country_id: 1
+)
+
+phrase_2_2 = PhraseCountry.create!(
+  content: "Ou sont les..?",
+  phrase_id: 2,
+  country_id: 2
+)
+
+phrase_3_1 = PhraseCountry.create!(
+  content: "Mit karte bitte",
+  phrase_id: 3,
+  country_id: 1
+)
+
+phrase_3_2 = PhraseCountry.create!(
+  content: "Par carte s'il vous plait",
+  phrase_id: 3,
+  country_id: 2
 )
