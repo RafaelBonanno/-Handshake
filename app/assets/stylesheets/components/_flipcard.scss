@@ -1,11 +1,12 @@
 body { font-family: sans-serif; }
 
 .scene {
-  width: 160px;
-  height: 280px;
+  width: 200px;
+  height: 120px;
 /*   border: 1px solid #CCC; */
   margin: 40px 0;
   perspective: 600px;
+  border-radius: 25px;
 }
 
 .flipcards-container{
@@ -13,9 +14,7 @@ body { font-family: sans-serif; }
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 16px;
     border: red solid 10px;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap
+    // padding-left: 20px;
   }
 
   // Smallest device

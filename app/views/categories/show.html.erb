@@ -4,8 +4,11 @@
 <% if @tips.empty? %>
 <h2> IN PROGRESS </h2>
 <% else %>
-<h2><%= @tips.sample.content %></h2>
-    <h2>Phrases:</h2>
+<div class="tips-container" data-controller="change-tip">
+<button onclick="this.outerHTML='<%= @tips.sample.content %>'">CLICK ME</button>
+<h3 data-change-tip-target="tip"><%= @tips.sample.content %></h3>
+</div>
+    <h2 id="title-flipcards">Phrases:</h2>
     <div class="flipcards-container">
       <% @phrases.each do |phrase| %>
       <div class="scene">
@@ -21,4 +24,3 @@
       <% end %>
     </div>
 <% end %>
-
