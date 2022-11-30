@@ -6,11 +6,25 @@
   </nav>
   <nav class="collapse" id="Nav1">
     <div class="container-fluid d-flex justify-content-between">
-        <a id="len1" class="clickable" href="/"><i class="fa-solid fa-house"></i></a>
-        <a id="len2" class="clickable" href="/trips/new"><i class="fa-solid fa-paper-plane"></i></a>
-        <a id="len3" class="clickable" href="/dashboard"><i class="fa-solid fa-table-columns"></i></a>
-        <a id="len4" class="clickable" href="/users/sign_in"><i class="fa-solid fa-user"></i></a>
-
+        <a id="len4" class="clickable" href="/users/sign_in">></a>
+         <%= link_to root_path do %>
+          <i class="fa-solid fa-house"></i>
+        <% end %>
+        <%= link_to new_trip_path do %>
+          <i class="fa-solid fa-paper-plane"></i>
+        <% end %>
+        <%= link_to dashboard_path do %>
+          <i class="fa-solid fa-table-columns"></i>
+        <% end %>
+        <% if current_user %>
+          <%= link_to destroy_user_session_path, data: {turbo_method: :delete}  do %>
+            <i class="fa-solid fa-user"></i>
+          <% end %>
+        <% else %>
+          <%= link_to new_user_session_path do %>
+            <i class="fa-solid fa-user"></i>
+          <% end %>
+        <% end %>
     </div>
   </nav>
 </div>
