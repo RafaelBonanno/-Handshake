@@ -4,10 +4,12 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["flipcard"]
   connect() {
+    console.log("hello from flipcard controller")
   }
 
   flipPhrase() {
     this.flipcardTarget.classList.toggle('is-flipped')
+    console.log("hello from flipcard controller")
   }
 
 }
