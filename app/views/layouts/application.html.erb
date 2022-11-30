@@ -13,8 +13,13 @@
 
   <body>
     <%= render "shared/flashes" %>
-
-    <%= yield %>
-    <%= render "components/navbar" %>
+  <div class="wrapper">
+    <div id="content-goes-here"> <!-- the id here is just to remind you -->
+      <%= yield %>
+    </div>
+    <div id="footer-goes-here"> <!-- the id here is just to remind you -->
+      <%= render "components/navbar" %>
+    </div>
+  </div>
   </body>
 </html>
