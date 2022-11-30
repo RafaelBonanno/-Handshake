@@ -34,10 +34,9 @@ class TripsController < ApplicationController
 
   def update
     @trip = Trip.find(params[:id])
-    @country = @trip.country
     @trip.user = current_user
     @trip.update(trip_params)
-    redirect_to trips_path
+    redirect_to dashboard_path
   end
 
   def destroy
