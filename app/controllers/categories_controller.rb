@@ -9,5 +9,6 @@ class CategoriesController < ApplicationController
     @country = @trip.country
     @tips = Tip.where(category: @category, country: @country)
     @phrases = Phrase.where(category_id: @category)
+    @phrases_country = PhraseCountry.all
   end
 end
