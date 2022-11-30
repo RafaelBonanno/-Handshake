@@ -53,14 +53,33 @@ germany = Country.create!(
   name: "Germany"
 )
 
-german_tip = Tip.create!(
+german_tip_1 = Tip.create!(
   content: "Supermarkets are closed in Germany on Sunday",
   category_id: 1,
   country_id: 1
 )
+
+german_tip_2 = Tip.create!(
+  content: "Frau Netto is never smiling but a smile never killed anyone - dont be the first victim",
+  category_id: 1,
+  country_id: 1
+)
+
 france = Country.create!(
   language: "French",
   name: "France"
+)
+
+france_tip_1 = Tip.create!(
+  content: "Most of the supermarkets are opened in France during the weekends !",
+  category_id: 1,
+  country_id: 2
+)
+
+france_tip_2 = Tip.create!(
+  content: "Pains au Chocolat do not hurt",
+  category_id: 1,
+  country_id: 2
 )
 
 my_trip = Trip.create!(
