@@ -6,12 +6,10 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-
 Trip.destroy_all
 User.destroy_all
 Country.destroy_all
 Category.destroy_all
-
 
 user = User.create!(
   email: "traveller@handshake.com",
