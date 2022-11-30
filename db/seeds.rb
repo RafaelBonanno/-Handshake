@@ -9,8 +9,8 @@
 
 Trip.destroy_all
 User.destroy_all
-Category.destroy_all
 Country.destroy_all
+Category.destroy_all
 
 
 user = User.create!(
