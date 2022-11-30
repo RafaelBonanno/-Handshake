@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+Category.destroy_all
 Trip.destroy_all
 User.destroy_all
 Country.destroy_all
-Category.destroy_all
 
 user = User.create!(
   email: "traveller@handshake.com",
@@ -72,4 +72,10 @@ phrase_1 = Phrase.create!(
   content: "How much is this?",
   time_day: 1,
   category_id: 1
+)
+
+phrase_1_1 = PhraseCountry.create!(
+  content: "Wie viel kostet das?",
+  phrase_id: 1,
+  country_id: 1
 )
