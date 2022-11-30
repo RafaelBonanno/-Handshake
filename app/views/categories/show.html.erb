@@ -1,7 +1,9 @@
 <%= @category.name %>
 <%= @trip.country.name %>
 
-
+<% if @tips.empty? %>
+<h2> IN PROGRESS </h2>
+<% else %>
 <h2><%= @tips.sample.content %></h2>
     <h2>Phrases:</h2>
     <div class="flipcards-container">
@@ -18,8 +20,5 @@
       </div>
       <% end %>
     </div>
+<% end %>
 
-
-<%# HERE IS THE FLIPPING CARD HTML %>
-
-<p>Click flipcard to flip.</p>

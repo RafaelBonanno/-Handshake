@@ -6,49 +6,61 @@
 </div>
 <div class="background-category">
   <div class="cards-list">
-  <%= link_to trip_category_path(@trip, @categories[0]) do %>
-    <div class="card 1">
-      <div class="card_image"> <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" /> </div>
-      <div class="card_title title-white">
-        <p>Shopping</p>
+    <%= link_to trip_category_path(@trip, @categories[0]) do %>
+      <div class="card 1">
+        <div class="card_image"> <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" /></div>
+        <div class="card_title title-white">
+          <p>Shopping</p>
+        </div>
       </div>
-    </div>
-  <% end %>
-    <div class="card 1">
-      <div class="card_image"> <img src="https://images.unsplash.com/photo-1517400508447-f8dd518b86db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fGFpcnBvcnR8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60" /> </div>
-      <div class="card_title title-white">
-        <p><%= link_to "Aiport", trip_category_path(@trip, @categories[1]) %></p>
+    <% end %>
+    <%= link_to trip_category_path(@trip, @categories[1]) do %>
+      <div class="card 1">
+        <div class="card_image"> <img src="https://images.unsplash.com/photo-1517400508447-f8dd518b86db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fGFpcnBvcnR8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60" /> </div>
+        <div class="card_title title-white">
+          <p>Airport</p>
+        </div>
       </div>
-    </div>
-    <div class="card 1">
-      <div class="card_image"> <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGVhdGluZyUyMG91dHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" /> </div>
-      <div class="card_title title-white">
-        <p><%= link_to "Eating out", trip_category_path(@trip, @categories[2]) %></p>
+    <% end %>
+    <%= link_to trip_category_path(@trip, @categories[2]) do %>
+      <div class="card 1">
+        <div class="card_image"> <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGVhdGluZyUyMG91dHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" /> </div>
+          <div class="card_title title-white">
+            <p>Eating out</p>
+          </div>
       </div>
-    </div>
-    <div class="card 1">
-      <div class="card_image"> <img src="https://images.unsplash.com/photo-1596633607590-7156877ef734?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" /> </div>
-      <div class="card_title title-white">
-        <p><%= link_to "Greetings", trip_category_path(@trip, @categories[4]) %></p>
+    <% end %>
+    <%= link_to trip_category_path(@trip, @categories[4]) do %>
+      <div class="card 1">
+        <div class="card_image"> <img src="https://images.unsplash.com/photo-1596633607590-7156877ef734?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" /> </div>
+          <div class="card_title title-white">
+            <p> Greetings </p>
+          </div>
       </div>
-    </div>
-    <div class="card 1">
-      <div class="card_image"> <img src="https://images.unsplash.com/photo-1553012781-b47b6751792c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" /> </div>
-      <div class="card_title title-white">
-        <p><%= link_to "Directions", trip_category_path(@trip, @categories[5]) %></p>
+    <% end %>
+    <%= link_to trip_category_path(@trip, @categories[5]) do %>
+      <div class="card 1">
+        <div class="card_image"> <img src="https://images.unsplash.com/photo-1553012781-b47b6751792c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" /> </div>
+          <div class="card_title title-white">
+            <p>Directions</p>
+          </div>
       </div>
-    </div>
-    <div class="card 1">
-      <div class="card_image"> <img src="https://images.unsplash.com/photo-1553012781-b47b6751792c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" /> </div>
-      <div class="card_title title-white">
-        <p><%= link_to "More", trip_category_path(@trip, @categories[6]) %></p>
+    <% end %>
+    <%= link_to trip_category_path(@trip, @categories[6]) do %>
+      <div class="card 1">
+        <div class="card_image"> <img src="https://images.unsplash.com/photo-1553012781-b47b6751792c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" /> </div>
+          <div class="card_title title-white">
+            <p>More</p>
+          </div>
       </div>
-    </div>
+    <% end %>
+    <%= link_to trip_category_path(@trip, @categories[3]) do %>
     <div class="card 1">
       <div class="card_image"> <img src="https://images.unsplash.com/photo-1542672701-783a62f67be4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" /> </div>
-      <div class="card_title title-white">
-        <p><%= link_to "SOS", trip_category_path(@trip, @categories[3]) %></p>
-      </div>
+        <div class="card_title title-white">
+          <p>SOS</p>
+        </div>
     </div>
+    <% end %>
   </div>
 </div>
