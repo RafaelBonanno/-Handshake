@@ -70,6 +70,16 @@ france = Country.create!(
   name: "France"
 )
 
+spain = Country.create!(
+  language: "Spanish",
+  name: "Spain"
+)
+
+japan = Country.create!(
+  language: "Japanese",
+  name: "Japan"
+)
+
 france_tip_1 = Tip.create!(
   content: "Most of the supermarkets are opened in France during the weekends !",
   category_id: 1,
