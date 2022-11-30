@@ -75,6 +75,23 @@
     </div>
   </div>
 </div>
+
+<div class="favorites">
+<h4>Your saved phrases</h4>
+
+<% @favorites.each do |favorite| %>
+
+<p><%= favorite.phrase_country.content %></p>
+<p>which means</p>
+<p><%= favorite.phrase_country.phrase.content %> in <%= favorite.phrase_country.country.language %></p>
+
+<%= link_to "unmark favorite", favorite_delete_path(favorite), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger rounded-pill text-white" %>
+
+
+<% end %>
+
+</div>
+
     <% end %>
   </div>
   <% end %>
