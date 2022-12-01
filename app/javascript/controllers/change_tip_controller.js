@@ -8,11 +8,10 @@ export default class extends Controller {
   }
 
   connect() {
-    console.log(this.tipsValue)
   }
 
   changeTip() {
-    console.log("im clicking the button");
+    console.log(this.tipTarget.innerText)
     // this.tip1Target.classList.toggle('animate__animated', 'animate__flash')
     // this.tip1.tip1Target.classList.toggle('display');
     const tipContent = this.#sampleTipsFromArray();
@@ -33,11 +32,11 @@ export default class extends Controller {
   }
   #sampleTipsFromArray(){
     var tip = this.tipsValue[Math.floor(Math.random()*this.tipsValue.length)];
-    // if (tip != tip) {
+    if (tip != this.tipTarget.innerText) {
       return tip
-    // } else {
-    //   var tip = this.tipsValue[Math.floor(Math.random()*this.tipsValue.length)];
-    //   return tip
-    // }
+    } else {
+      var tip = this.tipsValue[Math.floor(Math.random()*this.tipsValue.length)];
+      return tip
+    }
   }
   }
