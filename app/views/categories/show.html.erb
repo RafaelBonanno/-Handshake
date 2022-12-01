@@ -6,26 +6,34 @@
 <% else %>
 <div class="tips-container" data-controller="change-tip" data-change-tip-tips-value="<%= @tips %>" >
 <button data-action="click->change-tip#changeTip">CLICK ME</button>
-<h3 data-change-tip-target="tip"><%= @tips.sample.content %></h3>
+<h3 data-change-tip-target="tip"><%= @tips.sample.content %></h3><% end %>
 </div>
     <h2 id="title-flipcards">Phrases:</h2>
     <div class="flipcards-container">
       <% @phrases.each do |phrase| %>
-      <div class="favorite">
-
-<%= link_to "❤️", favorites_path(phrase: phrase), data: {turbo_method: :post}, notice: "The phrase was added in your favorites" %>
-
-      </div>
-      <div class="scene">
-        <div class="flipcard" data-controller="flip-phrases" data-action="click->flip-phrases#flipPhrase" data-flip-phrases-target="flipcard">
-          <div class="flipcard__face flipcard__face--front">
-            <p class="flipcard-text"><%= phrase.content %></p>
+      <div class="flipcard-container">
+        <div class="scene">
+          <div class="flipcard" data-controller="flip-phrases" data-action="click->flip-phrases#flipPhrase" data-flip-phrases-target="flipcard">
+            <div class="flipcard__face flipcard__face--front">
+              <p class="flipcard-text"><%= phrase.content %></p>
+            </div>
+            <% if PhraseCountry.where(country: @country).and(PhraseCountry.where(phrase: phrase)).first.nil? %>
+            <div class="flipcard__face flipcard__face--back">
+              <p class="flipcard-text">WORK IN PROGRESS</p>
+            <div class="favorite">
+            <%= link_to "❤️", favorites_path(phrase: phrase), data: {turbo_method: :post}, notice: "The phrase was added in your favorites" %>
+            </div>
+            </div>
+            <% else %>
+            <div class="flipcard__face flipcard__face--back">
+              <p class="flipcard-text"><%= PhraseCountry.where(country: @country).and(PhraseCountry.where(phrase: phrase)).first.content %></p>
+            <div class="favorite">
+            <%= link_to "❤️", favorites_path(phrase: phrase), data: {turbo_method: :post}, notice: "The phrase was added in your favorites" %>
+            </div>
+            </div>
           </div>
-          <div class="flipcard__face flipcard__face--back">
-            <p class="flipcard-text"><%= PhraseCountry.where(country: @country).and(PhraseCountry.where(phrase: phrase)).first.content %></p>
-          </div>
-        </div>
+            <% end %>
       </div>
-      <% end %>
+      </div>
     </div>
 <% end %>
