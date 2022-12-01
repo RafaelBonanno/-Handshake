@@ -45,6 +45,22 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.card-category-new {
+  background-size:cover;
+  background-repeat: no-repeat;
+  height: 180px;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-bottom-left-radius: 20%;
+  border-bottom-right-radius: 20%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
 .cards-list {
   z-index: 0;
   width: 100%;
