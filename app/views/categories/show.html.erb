@@ -4,9 +4,9 @@
 <% if @tips.empty? %>
 <h2> IN PROGRESS </h2>
 <% else %>
-<div class="tips-container" data-controller="change-tip">
+<div class="tips-container" data-controller="change-tip" data-change-tip-tips-value="<%= @tips %>" >
 <button data-action="click->change-tip#changeTip">CLICK ME</button>
-<h3 data-change-tip-target="tip" ><%= @tips.sample.content %></h3>
+<h3 data-change-tip-target="tip"><%= @tips.sample.content %></h3>
 </div>
     <h2 id="title-flipcards">Phrases:</h2>
     <div class="flipcards-container">
