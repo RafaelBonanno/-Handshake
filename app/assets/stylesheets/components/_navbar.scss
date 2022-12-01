@@ -1,11 +1,22 @@
 
 .navbar {
-  position: absolute;
-  width: 391px;
-  height: 70px;
-  left: 19px;
-  top: 10px;
 
-  background: #D5D5D5;
+  margin-left: 10px;
+  margin-right: 10px;
+  background: #4D94A0;
   border-radius: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-size: x-large;
+  padding: 16px 40px;
+  margin-bottom: 16px;
+
+  a {
+  text-decoration: none;
+  color: white;
+
+
+  }
 }
