@@ -5,6 +5,7 @@
 <h2> IN PROGRESS </h2>
 <% else %>
 <h2><%= @tips.sample.content %></h2>
+<% end %>
     <h2>Phrases:</h2>
     <div class="flipcards-container">
       <% @phrases.each do |phrase| %>
@@ -18,7 +19,6 @@
           </div>
         </div>
       </div>
-      <% end %>
+
     </div>
 <% end %>
-
