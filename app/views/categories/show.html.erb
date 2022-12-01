@@ -12,9 +12,7 @@
     <div class="flipcards-container">
       <% @phrases.each do |phrase| %>
       <div class="favorite">
-
-<%= link_to "❤️", favorites_path(phrase: phrase), data: {turbo_method: :post}, notice: "The phrase was added in your favorites" %>
-
+      <%= link_to "❤️", favorites_path(phrase: phrase), data: {turbo_method: :post}, notice: "The phrase was added in your favorites" %>
       </div>
       <div class="scene">
         <div class="flipcard" data-controller="flip-phrases" data-action="click->flip-phrases#flipPhrase" data-flip-phrases-target="flipcard">

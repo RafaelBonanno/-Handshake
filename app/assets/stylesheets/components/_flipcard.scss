@@ -1,4 +1,4 @@
-body { font-family: sans-serif; }
+// CSS FOR THE FLIPCARDS
 
 .scene {
   width: 200px;
@@ -15,6 +15,9 @@ body { font-family: sans-serif; }
     border: red solid 10px;
     // padding-left: 20px;
   }
+.favorite {
+  border: green solid 10px;
+}
 
   // Smallest device
   @media (min-width: 100px) and (max-width: 575px) {
