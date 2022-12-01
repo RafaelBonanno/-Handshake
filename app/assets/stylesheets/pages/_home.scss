@@ -12,7 +12,7 @@
   position: fixed;
   top: 0;
   left: 0;
-
+  position: absolute;
   /* Preserve aspet ratio */
   min-width: 100%;
   min-height: 100%;
@@ -26,6 +26,10 @@
   background: linear-gradient(#167FFB, #0F60C4);
   transition: background 0.3s ease;
   border: 1px solid #0F60C4;
+  position: relative;
+  left: 100px;
+  right: 200px;
+  top: 350px;
 }
 
 .btn-gradient:hover {
@@ -33,6 +37,26 @@
   color: white;
 }
 
+.title {
+  text-align: center;
+  padding: 30px;
+
+  h1 {
+    font-family: 'Nerko One', cursive;
+    font-size: 50px;
+  }
+}
+
+.subtitle {
+  text-align: center;
+  position: relative;
+  top: 200px;
+
+  h2 {
+    font-size: 40px;
+    font-family: 'Nerko One', cursive;
+
+  }
 
 .taubenbutton {
   background-color: #4D94A0;
