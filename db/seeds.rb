@@ -201,7 +201,19 @@ Phrase.create!(
 )
 
 Phrase.create!(
-  content: "I need an ambulance",
+  content: "Call an ambulance!",
+  time_day: 1,
+  category_id: 4
+)
+
+Phrase.create!(
+  content: "Call the police!",
+  time_day: 1,
+  category_id: 4
+)
+
+Phrase.create!(
+  content: "I am lost, can you help?",
   time_day: 1,
   category_id: 4
 )
@@ -324,18 +336,146 @@ PhraseCountry.create!(
 
 PhraseCountry.create!(
   content: "Salve!",
+  phrase_id: 13,
+  country_id: 5
+)
+
+PhraseCountry.create!(
+  content: "Hallo!",
+  phrase_id: 13,
+  country_id: 1
+)
+
+PhraseCountry.create!(
+  content: "Arrivederci!",
+  phrase_id: 14,
+  country_id: 5
+)
+
+PhraseCountry.create!(
+  content: "Aufwiedersehen!",
+  phrase_id: 14,
+  country_id: 1
+)
+
+PhraseCountry.create!(
+  content: "Grazie!",
+  phrase_id: 15,
+  country_id: 5
+)
+
+PhraseCountry.create!(
+  content: "Danke!",
+  phrase_id: 15,
+  country_id: 1
+)
+
+PhraseCountry.create!(
+  content: "Prego!",
+  phrase_id: 16,
+  country_id: 5
+)
+
+PhraseCountry.create!(
+  content: "Bitte!",
+  phrase_id: 16,
+  country_id: 1
+)
+
+PhraseCountry.create!(
+  content: "Piacere di conoscerti!",
+  phrase_id: 17,
+  country_id: 5
+)
+
+PhraseCountry.create!(
+  content: "Schön, dich kennen zu lernen!",
+  phrase_id: 17,
+  country_id: 1
+)
+
+PhraseCountry.create!(
+  content: "Buona giornata!",
+  phrase_id: 18,
+  country_id: 5
+)
+
+PhraseCountry.create!(
+  content: "Schönen Tag!",
+  phrase_id: 18,
+  country_id: 1
+)
+
+# TRANSLATED PHRASES SOS
+
+PhraseCountry.create!(
+  content: "Ho bisgono di aiuto!",
   phrase_id: 7,
   country_id: 5
 )
 
 PhraseCountry.create!(
-  content: "Arrivederci!",
-  phrase_id: 8,
-  country_id:5
+  content: "Ich brauche Hilfe!",
+  phrase_id: 7,
+  country_id: 1
 )
 
 PhraseCountry.create!(
-  content: "Grazie!",
+  content: "Sono ferito!",
+  phrase_id: 8,
+  country_id: 5
+)
+
+PhraseCountry.create!(
+  content: "Ich bin verletzt!",
+  phrase_id: 8,
+  country_id: 1
+)
+
+PhraseCountry.create!(
+  content: "C'é un incendio!",
   phrase_id: 9,
-  country_id:5
+  country_id: 5
+)
+
+PhraseCountry.create!(
+  content: "Es brennt!",
+  phrase_id: 9,
+  country_id: 1
+)
+
+PhraseCountry.create!(
+  content: "Chiamate un'ambulanza!",
+  phrase_id: 10,
+  country_id: 5
+)
+
+PhraseCountry.create!(
+  content: "Ruf einen Krankenwagen!",
+  phrase_id: 10,
+  country_id: 1
+)
+
+PhraseCountry.create!(
+  content: "Chiamate la polizia!",
+  phrase_id: 11,
+  country_id: 5
+)
+
+PhraseCountry.create!(
+  content: "Ruf die Polizei an!",
+  phrase_id: 11,
+  country_id: 1
+)
+
+PhraseCountry.create!(
+  content: "Mi sono perso, puoi aiutarmi?",
+  phrase_id: 12,
+  country_id: 5
+)
+
+PhraseCountry.create!(
+  content: "Ich bin verloren, kannst du mir helfen!",
+  phrase_id: 12,
+  country_id: 1
 )
