@@ -13,13 +13,13 @@
         <div class="card-product">
           <div class="card-image">
             <% if trip.country.name == "Germany" %>
-              <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" />
+              <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Germany">
             <% elsif trip.country.name == "France" %>
-              <img src="https://images.unsplash.com/photo-1551865673-9e9ee4f8cd4c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJhbmNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="">
+              <img src="https://images.unsplash.com/photo-1551865673-9e9ee4f8cd4c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJhbmNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="France">
             <% elsif trip.country.name == "Spain" %>
-              <img src="https://images.unsplash.com/photo-1559386081-325882507af7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHNwYWlufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="">
+              <img src="https://images.unsplash.com/photo-1559386081-325882507af7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHNwYWlufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Spaim">
             <% else %>
-              <img src="https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsbGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="">
+              <img src="https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsbGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="All">
             <% end %>
     </div>
     <div class="card-product-infos">
@@ -30,6 +30,9 @@
       <p class="btn btn-info" data-bs-toggle="modal" data-bs-target="#tripModal<%= trip.id %>">Manage this trip</p>
     </div>
 </div>
+
+<%#MODAL %>
+
 <div class="modal fade" id="tripModal<%= trip.id %>" tabindex="-1" aria-labelledby="tripModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -39,9 +42,6 @@
       </div>
       <div class="modal-body">
         <p><strong>Details</strong></p>
-        <ul class="list-group">
-          <li class="list-group-item">
-            <br>
           <div class="pb-4">
             <p><strong>Start date</strong></p>
             <%= trip.start_date.strftime("%A %e %m %Y") %>
@@ -50,6 +50,27 @@
             <p><strong>Return date</strong></p>
             <%= trip.end_date.strftime("%A %e %m %Y") %>
           </div>
+      </div>
+      <div class="modal-footer pb-4 justify-content-center">
+        <%= link_to "Edit your trip", edit_trip_path(trip), class: "btn btn-primary rounded-pill" %>
+        <%= link_to "Cancel this trip", trip_path(trip), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger rounded-pill text-white" %>
+      </div>
+    </div>
+  </div>
+</div>
+    <% end %>
+<div class="favorites">
+  <h4>Your saved phrases</h4>
+  <% @favorites.each do |favorite| %>
+    <p><%= favorite.phrase_country.content %></p>
+    <p>which means</p>
+    <p><%= favorite.phrase_country.phrase.content %> in <%= favorite.phrase_country.country.language %></p>
+    <%= link_to "unmark favorite", favorite_path(favorite), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to unmark this phrase?"}, class: "btn btn-danger rounded-pill text-white" %>
+  <% end %>
+<% end %>
+</div>
+
+
           <%# <div class="pb-4">
             <p><strong>Status</strong></p>
             <% if trip.status == "pending" %>
@@ -60,46 +81,3 @@
               <%# <p>how's the trip going?</p> %>
             <%# <% end %>
           <%# </div> %>
-        </ul>
-      </div>
-      <div class="modal-footer pb-4 justify-content-center">
-        <%= link_to "Edit your trip", edit_trip_path(trip), class: "btn btn-primary rounded-pill" %>
-        <%= link_to "Cancel this trip", trip_path(trip), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger rounded-pill text-white" %>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-    <% end %>
-<div class="favorites">
-  <h4>Your saved phrases</h4>
-  <% @favorites.each do |favorite| %>
-    <p><%= favorite.phrase_country.content %></p>
-    <p>which means</p>
-    <p><%= favorite.phrase_country.phrase.content %> in <%= favorite.phrase_country.country.language %></p>
-    <%= link_to "unmark favorite", favorite_path(favorite), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to unmark this phrase?"}, class: "btn btn-danger rounded-pill text-white" %>
-    <% end %>
-  </div>
-
-    <% end %>
-    <%= link_to new_trip_path, class: "d-flex justify-content-center btn btn-primary rounded-pill" do %>
-        <p>Add a new trip</p>
-      <% end %>
-    </div>
-</div>
-
-<%# <div class="cards-dashboard"> %>
-  <%# <% @trips.each do |trip| %>
-    <%# <div class ="card-trip">
-        <div class="card-dashboard d-block" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://wallpaperaccess.com/full/1224372.jpg)">
-          <%= link_to "You trip to #{trip.country}", trip_path(trip) %>
-          <%# <% if Booking.where(spaceship_id: @bookings[0].spaceship_id)[0].present?%>
-          <%# <div class="card-trip-infos"> %>
-          <%# </div> %>
-        <%# </div> %>
-    <%# </div> %>
-  <%# <% end %>
-  <%# <%= link_to new_trip_path, class: "d-flex justify-content-center align-items-center btn btn-primary" do %>
-    <%# <p>Add a new trip !</p> %>
-  <%# <% end %>
-<%# </div> %>
