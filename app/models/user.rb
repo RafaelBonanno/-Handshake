@@ -7,4 +7,5 @@ class User < ApplicationRecord
   validates :password, presence: true
   validates :username, presence: true
   has_many :trips, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 end

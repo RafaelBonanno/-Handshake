@@ -9,5 +9,6 @@ class PagesController < ApplicationController
   def dashboard
     authenticate_user!
     @trips = Trip.where(user_id: current_user)
+    @favorites = Favorite.where(user_id: current_user)
   end
 end
