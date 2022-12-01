@@ -8,7 +8,6 @@ class FavoritesController < ApplicationController
   end
 
   def create_favorite
-    raise 
     @favorite = Favorite.new
     @favorite.user = current_user
     @favorite.phrase_country_id = params[:phrase]

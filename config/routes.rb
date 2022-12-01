@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
   resources :favorites, only: [:destroy]
   get :dashboard, to: "pages#dashboard"
-  post :favorite, to: "favorites#create_favorite"
-  # delete :favorite_delete, to: "favorites#destroy_favorite"
+  post :favorites, to: "favorites#create_favorite"
+
 end
+
