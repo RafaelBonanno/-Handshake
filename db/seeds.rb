@@ -475,7 +475,7 @@ PhraseCountry.create!(
 )
 
 PhraseCountry.create!(
-  content: "Ich bin verloren, kannst du mir helfen!",
+  content: "Ich bin verloren, kannst du mir helfen?",
   phrase_id: 12,
   country_id: 1
 )
