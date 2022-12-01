@@ -1,0 +1,27 @@
+<h1>WOW THATS A TITLE</h1>
+
+<div class="favcards-container">
+  <% @favorites.each do |favorite| %>
+  <div class="favcard">
+    <div class="logos-favcard">
+      <div class="logo-favcard">
+        <img class="logo-favcard" src="https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/trash-512.png" alt="trash">
+      </div>
+      <div class="logo-favcard">
+        <img class="logo-favcard"src="https://cdn2.iconfinder.com/data/icons/squircle-ui/32/Sound-256.png" alt="sound">
+      </div>
+    </div>
+    <div class="content-favcard">
+      <div class="phrase-trs-favcard">
+        <p>In <strong><%= favorite.phrase_country.country.language %></strong>
+        <%= favorite.phrase_country.content %></p>
+      </p>
+      </div>
+      <div class="phrase-favcard">
+        <p> actually means
+        <%= favorite.phrase_country.phrase.content %>..!</p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

@@ -1,0 +1,36 @@
+.favcard{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 7px;
+  gap: 2px;
+  position: relative;
+  width: 160px;
+  height: 120px;
+  background: #4299FF;
+  border-radius: 20px 20px 0px 20px;
+}
+
+.logos-favcard{
+  display: flex;
+  justify-content: space-between;
+  width: 145px;
+}
+
+.logo-favcard{
+  width: 24.84px;
+  height: 24px;
+  background: #FFFFFF;
+  opacity: 0.75;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.content-favcard {
+  word-wrap: break-word;
+  font-size: 10px;
+}
+
+.favcards-container {
+}
