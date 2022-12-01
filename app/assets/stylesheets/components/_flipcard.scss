@@ -1,8 +1,8 @@
 body { font-family: sans-serif; }
 
 .scene {
-  width: 160px;
-  height: 280px;
+  width: 200px;
+  height: 120px;
 /*   border: 1px solid #CCC; */
   margin: 40px 0;
   perspective: 600px;
@@ -13,9 +13,7 @@ body { font-family: sans-serif; }
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 16px;
     border: red solid 10px;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap
+    // padding-left: 20px;
   }
 
   // Smallest device
@@ -77,6 +75,7 @@ body { font-family: sans-serif; }
 
 .flipcard__face {
   display: flex;
+  border-radius: 5px;
   position: absolute;
   justify-content: center;
   width: 100%;
@@ -88,13 +87,21 @@ body { font-family: sans-serif; }
   backface-visibility: hidden;
   align-items: center;
   vertical-align: center;
+  font-family: 'Nerko One', cursive;
+  font-size: 24px;
 }
 
 .flipcard__face--front {
-  background: crimson;
+  background: black;
 }
 
 .flipcard__face--back {
-  background: slateblue;
+  background: white;
   transform: rotateY(180deg);
+  color: black;
+}
+
+.flipcard:hover{
+  transition: 0.4s;
+  box-shadow: 0 0 11px rgba(0, 0, 0, 0.712);
 }

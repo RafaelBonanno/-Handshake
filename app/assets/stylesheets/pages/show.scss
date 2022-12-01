@@ -1,4 +1,19 @@
 
+.tips-container {
+  border: yellow solid 10px;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 10px;
+}
+
+.tips-container button {
+  margin-right: 40px;
+}
+
+#title-flipcards {
+  padding-left: 40px;
+}
+
 // CSS FOR THE CATEGORY PAGE
 
 .background-category{
