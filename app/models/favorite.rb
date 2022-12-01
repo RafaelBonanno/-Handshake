@@ -4,4 +4,4 @@ class Favorite < ApplicationRecord
 
   validates :phrase_country_id, uniqueness: true
 
-end 
+end

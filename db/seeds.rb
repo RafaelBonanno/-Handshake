@@ -80,6 +80,12 @@ japan = Country.create!(
   name: "Japan"
 )
 
+Country.create!(
+  language: "Italian",
+  name: "Italy"
+
+)
+
 france_tip_1 = Tip.create!(
   content: "Most of the supermarkets are opened in France during the weekends !",
   category_id: 1,
@@ -115,6 +121,18 @@ phrase_3 = Phrase.create!(
   content: "I am paying by card",
   time_day: 1,
   category_id: 1
+)
+
+Phrase.create!(
+  content: "Do you have this in a different size?",
+  time_day: 1,
+  category_id: 1
+)
+
+Phrase.create!(
+  content: "Please call an ambulance!",
+  time_day: 1,
+  category_id: 4
 )
 
 phrase_1_1 = PhraseCountry.create!(
