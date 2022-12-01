@@ -4,11 +4,11 @@
 
 import { application } from "./application"
 
+import ChangeTipController from "./change_tip_controller"
+application.register("change-tip", ChangeTipController)
+
 import FlipPhrasesController from "./flip_phrases_controller"
 application.register("flip-phrases", FlipPhrasesController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
-
-// import NavbarController from "./navbar_controller"
-// application.register("navbar", NavbarController)

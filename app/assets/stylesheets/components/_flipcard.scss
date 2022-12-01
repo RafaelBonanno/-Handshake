@@ -1,22 +1,22 @@
-body { font-family: sans-serif; }
+// CSS FOR THE FLIPCARDS
 
 .scene {
   width: 160px;
-  height: 280px;
+  height: 120px;
 /*   border: 1px solid #CCC; */
-  margin: 40px 0;
   perspective: 600px;
 }
 
 .flipcards-container{
   display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 16px;
+    gap: 16px;
     border: red solid 10px;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap
+    // padding-left: 20px;
   }
+.favorite {
+  border: green solid 10px;
+}
 
   // Smallest device
   @media (min-width: 100px) and (max-width: 575px) {
@@ -25,33 +25,33 @@ body { font-family: sans-serif; }
     }
   }
 
-  // Small devices (landscape phones, 576px and up)
-  @media (min-width: 576px) {
-    .flipcards-container {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
+  // // Small devices (landscape phones, 576px and up)
+  // @media (min-width: 576px) {
+  //   .flipcards-container {
+  //     grid-template-columns: 1fr 1fr;
+  //   }
+  // }
 
-  // Medium devices (tablets, 768px and up)
-  @media (min-width: 768px) {
-    .flipcards-container {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
+  // // Medium devices (tablets, 768px and up)
+  // @media (min-width: 768px) {
+  //   .flipcards-container {
+  //     grid-template-columns: 1fr 1fr;
+  //   }
+  // }
 
-  // Large devices (desktops, 992px and up)
-  @media (min-width: 992px) {
-    .flipcards-container {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-  }
+  // // Large devices (desktops, 992px and up)
+  // @media (min-width: 992px) {
+  //   .flipcards-container {
+  //     grid-template-columns: 1fr 1fr 1fr;
+  //   }
+  // }
 
-  // Extra large devices (large desktops, 1200px and up)
-  @media (min-width: 1200px) {
-    .flipcards-container {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-  }
+  // // Extra large devices (large desktops, 1200px and up)
+  // @media (min-width: 1200px) {
+  //   .flipcards-container {
+  //     grid-template-columns: 1fr 1fr 1fr;
+  //   }
+  // }
 
 .flipcard {
   display: flex;
@@ -66,6 +66,11 @@ body { font-family: sans-serif; }
   justify-content: center;
 }
 
+.flipcard-container {
+  border: blue solid 5px;
+  width: 100%
+}
+
 .flipcard-text{
   word-break: break-word;
   vertical-align: center;
@@ -77,6 +82,7 @@ body { font-family: sans-serif; }
 
 .flipcard__face {
   display: flex;
+  border-radius: 5px;
   position: absolute;
   justify-content: center;
   width: 100%;
@@ -88,13 +94,24 @@ body { font-family: sans-serif; }
   backface-visibility: hidden;
   align-items: center;
   vertical-align: center;
+  font-family: 'Nerko One', cursive;
+  font-size: 24px;
 }
 
 .flipcard__face--front {
-  background: crimson;
+  background: black;
+  width: 100%
 }
 
 .flipcard__face--back {
-  background: slateblue;
+  background: white;
   transform: rotateY(180deg);
+  color: black;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flipcard:hover{
+  transition: 0.4s;
+  box-shadow: 0 0 11px rgba(0, 0, 0, 0.712);
 }

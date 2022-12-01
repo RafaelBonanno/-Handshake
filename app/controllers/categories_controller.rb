@@ -11,4 +11,5 @@ class CategoriesController < ApplicationController
     @phrases = Phrase.where(category_id: @category)
     @phrases_country = PhraseCountry.all
   end
+
 end
