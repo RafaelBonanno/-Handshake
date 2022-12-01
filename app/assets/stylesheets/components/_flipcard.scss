@@ -1,10 +1,11 @@
 // CSS FOR THE FLIPCARDS
 
 .scene {
-  width: 160px;
+  width: 100%;
   height: 120px;
 /*   border: 1px solid #CCC; */
   perspective: 600px;
+  border: brown solid 3px
 }
 
 .flipcards-container{
@@ -68,7 +69,10 @@
 
 .flipcard-container {
   border: blue solid 5px;
-  width: 100%
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
 }
 
 .flipcard-text{
