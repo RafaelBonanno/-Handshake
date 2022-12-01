@@ -1,20 +1,23 @@
-body { font-family: sans-serif; }
+// CSS FOR THE FLIPCARDS
 
 .scene {
-  width: 200px;
+  width: 100%;
   height: 120px;
 /*   border: 1px solid #CCC; */
-  margin: 40px 0;
   perspective: 600px;
+  border: brown solid 3px
 }
 
 .flipcards-container{
   display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 16px;
+    gap: 16px;
     border: red solid 10px;
     // padding-left: 20px;
   }
+.favorite {
+  border: green solid 10px;
+}
 
   // Smallest device
   @media (min-width: 100px) and (max-width: 575px) {
@@ -23,33 +26,33 @@ body { font-family: sans-serif; }
     }
   }
 
-  // Small devices (landscape phones, 576px and up)
-  @media (min-width: 576px) {
-    .flipcards-container {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
+  // // Small devices (landscape phones, 576px and up)
+  // @media (min-width: 576px) {
+  //   .flipcards-container {
+  //     grid-template-columns: 1fr 1fr;
+  //   }
+  // }
 
-  // Medium devices (tablets, 768px and up)
-  @media (min-width: 768px) {
-    .flipcards-container {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
+  // // Medium devices (tablets, 768px and up)
+  // @media (min-width: 768px) {
+  //   .flipcards-container {
+  //     grid-template-columns: 1fr 1fr;
+  //   }
+  // }
 
-  // Large devices (desktops, 992px and up)
-  @media (min-width: 992px) {
-    .flipcards-container {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-  }
+  // // Large devices (desktops, 992px and up)
+  // @media (min-width: 992px) {
+  //   .flipcards-container {
+  //     grid-template-columns: 1fr 1fr 1fr;
+  //   }
+  // }
 
-  // Extra large devices (large desktops, 1200px and up)
-  @media (min-width: 1200px) {
-    .flipcards-container {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-  }
+  // // Extra large devices (large desktops, 1200px and up)
+  // @media (min-width: 1200px) {
+  //   .flipcards-container {
+  //     grid-template-columns: 1fr 1fr 1fr;
+  //   }
+  // }
 
 .flipcard {
   display: flex;
@@ -62,6 +65,14 @@ body { font-family: sans-serif; }
   transition: transform 1s;
   align-items: center;
   justify-content: center;
+}
+
+.flipcard-container {
+  border: blue solid 5px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
 }
 
 .flipcard-text{
@@ -93,12 +104,15 @@ body { font-family: sans-serif; }
 
 .flipcard__face--front {
   background: black;
+  width: 100%
 }
 
 .flipcard__face--back {
   background: white;
   transform: rotateY(180deg);
   color: black;
+  flex-direction: column;
+  align-items: center;
 }
 
 .flipcard:hover{
