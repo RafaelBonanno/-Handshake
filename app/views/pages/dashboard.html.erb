@@ -27,7 +27,7 @@
       <p>From <%=trip.start_date.strftime("%A %e %m %Y")%></p>
       <p>Until <%=trip.end_date.strftime("%A %e %m %Y")  %></p>
   <% end %>
-      <p class="btn btn-info" data-bs-toggle="modal" data-bs-target="#tripModal<%= trip.id %>">Manage this trip</p>
+      <p class="btn taubenbutton" data-bs-toggle="modal" data-bs-target="#tripModal<%= trip.id %>">Manage this trip</p>
     </div>
 </div>
 
@@ -52,8 +52,8 @@
           </div>
       </div>
       <div class="modal-footer pb-4 justify-content-center">
-        <%= link_to "Edit your trip", edit_trip_path(trip), class: "btn btn-primary rounded-pill" %>
-        <%= link_to "Cancel this trip", trip_path(trip), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger rounded-pill text-white" %>
+        <%= link_to "Edit your trip", edit_trip_path(trip), class: "btn taubenbutton" %>
+        <%= link_to "Cancel this trip", trip_path(trip), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn cancelbutton" %>
       </div>
     </div>
   </div>
