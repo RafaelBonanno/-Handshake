@@ -28,7 +28,7 @@
 <% else %>
 <div class="tips-container" data-controller="change-tip" data-change-tip-tips-value="<%= @tips.map(&:content) %>" >
   <button data-action="click->change-tip#changeTip" class="taubenbutton">Next tip!</button>
-  <h3 data-change-tip-target="tip" style="border:pink solid 5px"><%= @tips.sample.content %></h3>
+  <h3 data-change-tip-target="tip" ><%= @tips.sample.content %></h3>
   <%# <h3 data-change-tip-target="tip2" style="display-hidden"><%= @tips.sample.content</h3> %>
 <% end %>
 </div>
