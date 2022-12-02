@@ -32,4 +32,15 @@
 }
 
 .favcards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  border: blue solid 10px;
+  margin-top: 20px;
+}
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .favcards-container {
+    grid-template-columns: 1fr 1fr;
+  }
 }
