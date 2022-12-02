@@ -93,7 +93,7 @@ german_tip_1 = Tip.create!(
 )
 
 german_tip_2 = Tip.create!(
-  content: "Frau Netto is never smiling but a smile never killed anyone - dont be the first victim",
+  content: "Most of shops don't accept credit card",
   category_id: 1,
   country_id: 1
 )
@@ -156,6 +156,23 @@ phrase_2 = Phrase.create!(
 
 phrase_3 = Phrase.create!(
   content: "I am paying by card",
+  time_day: 1,
+  category_id: 1
+)
+phrase_4 = Phrase.create!(
+  content: "Is it possible to return this item?",
+  time_day: 1,
+  category_id: 1
+)
+
+phrase_5 = Phrase.create!(
+  content: "Where is the changing room?",
+  time_day: 1,
+  category_id: 1
+)
+
+phrase_6 = Phrase.create!(
+  content: "Do you have this in size...?",
   time_day: 1,
   category_id: 1
 )
