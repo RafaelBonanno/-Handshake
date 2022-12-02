@@ -1,11 +1,11 @@
-<div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1635&q=80)">
-  <div class="container">
+<div class="background">
   <div class="title">
-    <h1>Handshake &#129309;</h1>
-    </div>
-      <div class="subtitle">
-    <h2>helps you <strong>connect</strong> with locals during your travels</h2>
-    </div>
+    <h1><%= image_tag "logogood.svg" %></h1>
   </div>
-    <%= link_to "Where are you going?", new_trip_path, class: "btn taubenbutton" %>
+  <div class="subtitle">
+    <h4 class="text-white"><strong>connect</strong> with locals during your travels</h4>
+  </div>
+  <div class="where">
+    <%= link_to "Where are you going?", new_trip_path, class: "btn taubenbuttonhome" %>
+  </div>
 </div>
