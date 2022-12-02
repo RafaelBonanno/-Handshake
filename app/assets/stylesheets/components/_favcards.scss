@@ -20,8 +20,7 @@
 .logo-favcard{
   width: 24.84px;
   height: 24px;
-  background: #FFFFFF;
-  opacity: 0.75;
+  opacity: 0.85;
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -30,7 +29,19 @@
 .content-favcard {
   word-wrap: break-word;
   font-size: 10px;
+  margin-right: 30px
 }
 
 .favcards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  border: blue solid 10px;
+  margin-top: 20px;
+}
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .favcards-container {
+    grid-template-columns: 1fr 1fr;
+  }
 }

@@ -13,8 +13,8 @@
         <h1> You have no trips yet !</h1>
       </div>
     <% else %>
-    <% current_user.trips.each do |trip| %>
       <div class="container p-2">
+    <% current_user.trips.each do |trip| %>
         <%= link_to trip_path(trip) do%>
           <div class="card-product">
             <div class="card-image">
@@ -27,7 +27,6 @@
               <% else %>
                 <img src="https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsbGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="All">
               <% end %>
-
       </div>
       <div class="card-product-infos">
         <h2>Your trip to <%= trip.country.name %></h2>
@@ -74,8 +73,9 @@
       <p><%= favorite.phrase_country.phrase.content %> in <%= favorite.phrase_country.country.language %></p>
       <%= link_to "unmark favorite", favorite_path(favorite), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to unmark this phrase?"}, class: "btn btn-danger rounded-pill text-white" %>
     <% end %>
-  <% end %>
+    <% end %>
   </div>
+</div>
 </div>
 
 
