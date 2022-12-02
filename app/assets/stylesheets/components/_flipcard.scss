@@ -5,18 +5,15 @@
   height: 120px;
 /*   border: 1px solid #CCC; */
   perspective: 600px;
-  border: brown solid 3px
 }
 
 .flipcards-container{
   display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 16px;
-    border: red solid 10px;
     // padding-left: 20px;
   }
 .favorite {
-  border: green solid 10px;
 }
 
   @media (min-width: 100px) and (max-width: 575px) {
@@ -39,7 +36,6 @@
 }
 
 .flipcard-container {
-  border: blue solid 5px;
   width: 100%;
   display: flex;
   justify-content: space-between;
