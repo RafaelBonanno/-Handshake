@@ -11,6 +11,7 @@
   border-radius: 20px 20px 0px 20px;
 }
 
+
 .logos-favcard{
   display: flex;
   justify-content: space-between;
@@ -35,9 +36,10 @@
 .favcards-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 16px;
-  border: blue solid 10px;
+  gap: 40px;
   margin-top: 20px;
+  padding: 24px;
+
 }
 
 @media (min-width: 100px) and (max-width: 575px) {
