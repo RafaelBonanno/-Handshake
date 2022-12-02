@@ -122,6 +122,18 @@ france_tip_3 = Tip.create!(
   country_id: 2
 )
 
+france_tip_4 = Tip.create!(
+  content: "In France people kiss each other on the cheek. This is called la bise",
+  category_id: 5,
+  country_id: 2
+)
+
+france_tip_5 = Tip.create!(
+  content: "French people like being greeted in French",
+  category_id: 5,
+  country_id: 2
+)
+
 italian_tip_1 = Tip.create!(
   content: "Most of the supermarkets stay open in Italy during the weekends!",
   category_id: 1,
@@ -176,6 +188,23 @@ phrase_6 = Phrase.create!(
   time_day: 1,
   category_id: 1
 )
+
+phrase_4 = Phrase.create!(
+  content: "Can I return this item",
+  time_day: 1,
+  category_id: 1
+)
+
+phrase_5 = Phrase.create!(
+  content: "Where is the changing room?",
+  time_day: 1,
+  category_id: 1)
+
+  phrase_6 = Phrase.create!(
+    content: "Do you have this in size...?",
+    time_day: 1,
+    category_id: 1
+  )
 
 # CORE PHRASES DIRECTIONS
 
@@ -328,6 +357,23 @@ phrase_3_5 = PhraseCountry.create!(
   phrase_id: 3,
   country_id: 5
 )
+
+phrase_4_1 = PhraseCountry.create!(
+  content: "Kann ich das diesen Artikel umtauschen?",
+  phrase_id: 4,
+  country_id: 1
+)
+
+phrase_5_1 = PhraseCountry.create!(
+  content: "Wo ist die Umkleidekabine?",
+  phrase_id: 5,
+  country_id: 1)
+
+  phrase_6_1 = PhraseCountry.create!(
+    content: "Haben Sie das im Grosse?",
+    phrase_id: 6,
+    country_id: 1
+  )
 
 # TRANSLATED PHRASES DIRECTIONS
 
