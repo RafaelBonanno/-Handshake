@@ -1,43 +1,65 @@
-<%= @category.name %>
-<%= @trip.country.name %>
-
-<% if @tips.empty? %>
-<h2> IN PROGRESS </h2>
-<% else %>
-<div class="tips-container" data-controller="change-tip" data-change-tip-tips-value="<%= @tips.map(&:content) %>" >
-<button data-action="click->change-tip#changeTip">CLICK ME</button>
-
-<h3 data-change-tip-target="tip" style="border:pink solid 5px"><%= @tips.sample.content %></h3>
-<%# <h3 data-change-tip-target="tip2" style="display-hidden"><%= @tips.sample.content</h3> %>
-<% end %>
-</div>
-    <h2 id="title-flipcards">Phrases:</h2>
-    <div class="flipcards-container">
-      <% @phrases.each do |phrase| %>
-      <div class="flipcard-container">
-        <div class="scene">
-          <div class="flipcard" data-controller="flip-phrases" data-action="click->flip-phrases#flipPhrase" data-flip-phrases-target="flipcard">
-            <div class="flipcard__face flipcard__face--front">
-              <p class="flipcard-text"><%= phrase.content %></p>
-            </div>
-            <% if PhraseCountry.where(country: @country).and(PhraseCountry.where(phrase: phrase)).first.nil? %>
-              <div class="flipcard__face flipcard__face--back">
-                <p class="flipcard-text">WORK IN PROGRESS</p>
-                <div class="favorite">
-                  <%= link_to "❤️", favorites_path(phrase: phrase), data: {turbo_method: :post}, notice: "The phrase was added in your favorites" %>
-              </div>
-            </div>
-            <% else %>
-            <div class="flipcard__face flipcard__face--back">
-              <p class="flipcard-text"><%= PhraseCountry.where(country: @country).and(PhraseCountry.where(phrase: phrase)).first.content %></p>
-            <div class="favorite">
-              <%= link_to "❤️", favorites_path(phrase: phrase), data: {turbo_method: :post}, notice: "The phrase was added in your favorites" %>
-            </div>
-            </div>
-            </div>
-            <% end %>
-      </div>
-      </div>
+<div class="backgroundcolor">
+  <% if @category.name == "Shopping" %>
+  <div class="card-category-new" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8c2hvcHBpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60)">
+    <%= @category.name %> in <%= @trip.country.name %>
+  </div>
+  <% elsif @category.name =="Airport"  %>
+  <div class="card-category-new" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1517400508447-f8dd518b86db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fGFpcnBvcnR8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60)">
+    <%= @category.name %> in <%= @trip.country.name %>
+  </div>
+  <% elsif @category.name == "Eating out" %>
+  <div class="card-category-new" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1498654831517-895a5dfe4edc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZWF0aW5nJTIwb3V0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60)">
+    <%= @category.name %> in <%= @trip.country.name %>
+  </div>
+  <% elsif @category.name == "Greetings" %>
+  <div class="card-category-new" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1596443686812-2f45229eebc3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGdyZWV0aW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60)">
+    <%= @category.name %> in <%= @trip.country.name %>
+  </div>
+  <% elsif @category.name == "Directions" %>
+  <div class="card-category-new" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1542469756-5fc56fdd9959?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fGRpcmVjdGlvbnMlMjBzdHJlZXR8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60)">
+    <%= @category.name %> in <%= @trip.country.name %>
+  </div>
+  <% elsif @category.name == "SOS" %>
+  <div class="card-category-new" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1554734867-bf3c00a49371?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZW1lcmdlbmN5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60)">
+    <%= @category.name %> in <%= @trip.country.name %>
+  </div>
   <% end %>
+  <% if @tips.empty? %>
+  <h2> IN PROGRESS </h2>
+  <% else %>
+  <div class="tips-container" data-controller="change-tip" data-change-tip-tips-value="<%= @tips.map(&:content) %>" >
+    <button data-action="click->change-tip#changeTip" class="taubenbutton">Next tip!</button>
+    <h3 data-change-tip-target="tip" style="border:pink solid 5px"><%= @tips.sample.content %></h3>
+    <%# <h3 data-change-tip-target="tip2" style="display-hidden"><%= @tips.sample.content</h3> %>
+  <% end %>
+  </div>
+      <h2 id="title-flipcards">Phrases:</h2>
+      <div class="flipcards-container">
+        <% @phrases.each do |phrase| %>
+        <div class="flipcard-container">
+          <div class="scene">
+            <div class="flipcard" data-controller="flip-phrases" data-action="click->flip-phrases#flipPhrase" data-flip-phrases-target="flipcard">
+              <div class="flipcard__face flipcard__face--front">
+                <p class="flipcard-text"><%= phrase.content %></p>
+              </div>
+              <% if PhraseCountry.where(country: @country).and(PhraseCountry.where(phrase: phrase)).first.nil? %>
+                <div class="flipcard__face flipcard__face--back">
+                  <p class="flipcard-text">WORK IN PROGRESS</p>
+                  <div class="favorite">
+                    <%= link_to "❤️", favorites_path(phrase: phrase), data: {turbo_method: :post}, notice: "The phrase was added in your favorites" %>
+                </div>
+              </div>
+              <% else %>
+              <div class="flipcard__face flipcard__face--back">
+                <p class="flipcard-text"><%= PhraseCountry.where(country: @country).and(PhraseCountry.where(phrase: phrase)).first.content %></p>
+              <div class="favorite">
+                <%= link_to "❤️", favorites_path(phrase: phrase), data: {turbo_method: :post}, notice: "The phrase was added in your favorites" %>
+              </div>
+              </div>
+              </div>
+              <% end %>
+        </div>
+        </div>
+    <% end %>
+  </div>
 </div>
-

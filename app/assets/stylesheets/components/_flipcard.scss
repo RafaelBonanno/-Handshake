@@ -11,6 +11,7 @@
   display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 16px;
+    padding: 16px;
     // padding-left: 20px;
   }
 .favorite {
@@ -70,14 +71,14 @@
 }
 
 .flipcard__face--front {
-  background: black;
+  background: #66BFBF;
   width: 100%
 }
 
 .flipcard__face--back {
-  background: white;
+  background: #EAF6F6;
   transform: rotateY(180deg);
-  color: black;
+  color: #4D94A0;
   flex-direction: column;
   align-items: center;
 }
