@@ -65,15 +65,27 @@
     </div>
   </div>
       <% end %>
-  <div class="favorites">
+      <hr>
+  <div class="favcards-container">
     <h4>Your saved phrases</h4>
     <% @favorites.each do |favorite| %>
-      <p><%= favorite.phrase_country.content %></p>
-      <p>which means</p>
-      <p><%= favorite.phrase_country.phrase.content %> in <%= favorite.phrase_country.country.language %></p>
-      <%= link_to "unmark favorite", favorite_path(favorite), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to unmark this phrase?"}, class: "btn btn-danger rounded-pill text-white" %>
-    <% end %>
-    <% end %>
+    <div class="favcard">
+      <div class="content-favcard">
+        <div class="left-favcard">
+          <p><%= favorite.phrase_country.content %>
+          <br>
+          in <strong><%= favorite.phrase_country.country.language %></p></strong>
+        </div>
+        <div class="right-card">
+          <p>means
+          <br>
+          <%= favorite.phrase_country.phrase.content %></p>
+        </div>
+        <button class="taubenbutton"><%= link_to "unmark favorite", favorite_path(favorite), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to unmark this phrase?"} %></button>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
   </div>
 </div>
 </div>
