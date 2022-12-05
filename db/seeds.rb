@@ -55,17 +55,20 @@ categories << Category.create!(
 
 countries << Country.create!(
   language: "German",
-  name: "Germany"
+  name: "Germany",
+  code: "de-de"
 )
 
 countries << Country.create!(
   language: "French",
-  name: "France"
+  name: "France",
+  code: "fr-fr"
 )
 
 countries << Country.create!(
   language: "Spanish",
-  name: "Spain"
+  name: "Spain",
+  code: "es-es"
 )
 
 countries << Country.create!(
@@ -75,7 +78,8 @@ countries << Country.create!(
 
 countries << Country.create!(
   language: "Italian",
-  name: "Italy"
+  name: "Italy",
+  code: "it-it"
 )
 
 countries << Country.create!(
@@ -85,17 +89,19 @@ countries << Country.create!(
 
 countries << Country.create!(
   language: "French",
-  name: "Belgium"
+  name: "Belgium",
+  code: "fr-fr"
 )
 
 countries << Country.create!(
   language: "English",
-  name: "UK"
+  name: "Great Britain",
+  code: "en-gb"
 )
 
 countries << Country.create!(
   language: "Swedish",
-  name: "Sweaden"
+  name: "Sweden"
 )
 
 countries << Country.create!(
@@ -105,7 +111,8 @@ countries << Country.create!(
 
 countries << Country.create!(
   language: "English",
-  name: "Ireland"
+  name: "Ireland",
+  code: "en-ie"
 )
 
 countries << Country.create!(
@@ -115,16 +122,17 @@ countries << Country.create!(
 
 countries << Country.create!(
   language: "Czech",
-  name: "Czechia"
+  name: "Czech Republic"
 )
 
 countries << Country.create!(
   language: "German",
-  name: "Austria"
+  name: "Austria",
+  code: "de-at"
 )
 
 countries << Country.create!(
-  language: "Portiguese",
+  language: "Portuguese",
   name: "Portugal"
 )
 countries << Country.create!(

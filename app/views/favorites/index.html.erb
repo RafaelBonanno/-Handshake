@@ -10,7 +10,7 @@
       <h4>Train your skills. Practice your saved phrases:</h4>
 
 
-    
+
 
       <br>
       Happy learning !</h4>
@@ -20,11 +20,11 @@
     </div>
     <div class="favcards-container">
       <% @favorites.each do |favorite| %>
-      <div class="favcard">
+      <div class="favcard" data-controller="api">
         <div class="logos-favcard">
-          <%# <div class="logo-favcard">
-            <i class="fa-solid fa-volume-high logo-favcard"></i>
-          </div> %>
+          <div class="logo-favcard">
+            <i data-action="click->api#fetchSpeech" class="fa-solid fa-volume-high logo-favcard" data-lang="<%= favorite.phrase_country.country.code %>"></i>
+          </div>
           <div class="logo-favcard">
             <%= link_to favorite_path(favorite), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to unmark this phrase?"} do %>
               <i class="fa-solid fa-trash-can logo-favcard"></i>
@@ -33,15 +33,17 @@
         </div>
         <%# </div> %>
         <div class="content-favcard">
-          <div class="phrase-trs-favcard">
-            <p>In <strong><%= favorite.phrase_country.country.language %></strong>
-            <br>
-            <%= favorite.phrase_country.content %></p>
+          <div class="left-favcard">
+            <p>In <em><%= favorite.phrase_country.country.language %></em>
+            <div data-api-target="sound" class="phrase-trs-favcard">
+              <strong><%= favorite.phrase_country.content %></strong></p>
+            </div>
           </div>
-          <div class="phrase-favcard">
+          <div class="right-favcard">
             <p>actually means:
-            <br>
-            <%= favorite.phrase_country.phrase.content %></p>
+            <div class="phrase-favcard">
+              <strong><%= favorite.phrase_country.phrase.content %></strong></p>
+            </div>
           </div>
         </div>
       </div>
