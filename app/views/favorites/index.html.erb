@@ -10,7 +10,7 @@
       <h4>Train your skills. Practice your saved phrases:</h4>
 
 
-    
+
 
       <br>
       Happy learning !</h4>
@@ -33,15 +33,17 @@
         </div>
         <%# </div> %>
         <div class="content-favcard">
-        <p>In <strong><%= favorite.phrase_country.country.language %></strong>
-            <br>
-          <div data-api-target="sound" class="phrase-trs-favcard">
-            <%= favorite.phrase_country.content %></p>
+          <div class="left-favcard">
+            <p>In <em><%= favorite.phrase_country.country.language %></em>
+            <div data-api-target="sound" class="phrase-trs-favcard">
+              <strong><%= favorite.phrase_country.content %></strong></p>
+            </div>
           </div>
-          <div class="phrase-favcard">
+          <div class="right-favcard">
             <p>actually means:
-            <br>
-            <%= favorite.phrase_country.phrase.content %></p>
+            <div class="phrase-favcard">
+              <strong><%= favorite.phrase_country.phrase.content %></strong></p>
+            </div>
           </div>
         </div>
       </div>
