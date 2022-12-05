@@ -53,7 +53,9 @@
             <% favorite_phrase = PhraseCountry.where(country: @country).and(PhraseCountry.where(phrase: phrase)).first %>
               <p class="flipcard-text"><%= PhraseCountry.where(country: @country).and(PhraseCountry.where(phrase: phrase)).first.content %></p>
             <div class="favorite">
-              <%= link_to "❤️", favorites_path(phrase_country: favorite_phrase), data: {turbo_method: :post}, notice: "The phrase was added in your favorites" %>
+              <%= link_to favorites_path(phrase_country: favorite_phrase), data: {turbo_method: :post}, notice: "The phrase was added in your favorites" do %>
+              <i class="fa-solid fa-heart"></i>
+              <% end %>
             </div>
             </div>
             </div>
