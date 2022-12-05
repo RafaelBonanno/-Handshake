@@ -479,7 +479,7 @@ phrase_3_5 = PhraseCountry.create!(
 )
 
 phrase_4_1 = PhraseCountry.create!(
-  content: "Kann ich das diesen Artikel umtauschen?",
+  content: "Kann ich diesen Artikel umtauschen?",
   phrase_id: 4,
   country_id: 1
 )

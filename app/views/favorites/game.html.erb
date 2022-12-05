@@ -11,9 +11,13 @@
     <% end %>
   </div>
 <h3>What does the following mean in English?</h3>
-
 <% guessphrase = @favorites.sample.phrase_country %>
-<p class="btn btn-secondary"><%= guessphrase.content %></p>
+<div data-controller="api">
+<div data-api-target="sound">
+  <p class="btn btn-secondary"><%= guessphrase.content %></p>
+</div>
+  <i data-action="click->api#fetchSpeech" class="fa-solid fa-volume-high logo-favcard" data-lang="<%= guessphrase.country.code %>"></i>
+</div>
 <br>
 <br>
 <h4>Select the write answer</h4>
