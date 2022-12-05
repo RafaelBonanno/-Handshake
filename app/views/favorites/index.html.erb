@@ -14,11 +14,11 @@
     </div>
     <div class="favcards-container">
       <% @favorites.each do |favorite| %>
-      <div class="favcard">
+      <div class="favcard" data-controller="api">
         <div class="logos-favcard">
-          <%# <div class="logo-favcard">
-            <i class="fa-solid fa-volume-high logo-favcard"></i>
-          </div> %>
+          <div class="logo-favcard">
+            <i data-action="click->api#fetchSpeech" class="fa-solid fa-volume-high logo-favcard"></i>
+          </div>
           <div class="logo-favcard">
             <%= link_to favorite_path(favorite), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to unmark this phrase?"} do %>
               <i class="fa-solid fa-trash-can logo-favcard"></i>
@@ -27,9 +27,9 @@
         </div>
         <%# </div> %>
         <div class="content-favcard">
-          <div class="phrase-trs-favcard">
-            <p>In <strong><%= favorite.phrase_country.country.language %></strong>
+        <p>In <strong><%= favorite.phrase_country.country.language %></strong>
             <br>
+          <div data-api-target="sound" class="phrase-trs-favcard">
             <%= favorite.phrase_country.content %></p>
           </div>
           <div class="phrase-favcard">
