@@ -1,5 +1,7 @@
 //CSS FOR THE TIPS
 .tips-container {
+
+  margin-top: 10px;
   display: flex;
   justify-content: flex-start;
   padding-left: 10px;
@@ -96,7 +98,7 @@
   object-fit: cover;
 }
 
- .card_title {
+.card_title {
   text-align: center;
   font-weight: bold;
   font-size: 28px;
@@ -143,7 +145,6 @@
   text-shadow: 2px 2px #3f3c3c;
   text-align: center;
   font-size: 32px;
-  text-shadow: 2px 2px #333030;
 }
 
 .trip-to {
