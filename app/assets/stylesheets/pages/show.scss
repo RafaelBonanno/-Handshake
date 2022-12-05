@@ -1,10 +1,10 @@
 //CSS FOR THE TIPS
 .tips-container {
-  margin-top: 10px;
+  margin-top: 16px;
+  margin-bottom: 16px;
   display: flex;
   justify-content: flex-start;
   padding-left: 10px;
-  margin-top: 10px;
   align-items: center;
 }
 
@@ -59,6 +59,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: column;
+  font-family: 'Catamaran', sans-serif;
 }
 
 .cards-list {
@@ -140,9 +141,9 @@
   font-weight: bold;
   text-shadow: 2px 2px #3f3c3c;
   text-align: center;
-  font-size: 32px;
+  font-size: 24px;
 }
 
 .trip-to {
-  font-family: Nunito, Helvetica, "sans-serif";
+  font-family: 'Catamaran', sans-serif;
 }

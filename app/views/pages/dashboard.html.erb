@@ -81,14 +81,15 @@
           <br>
           <%= favorite.phrase_country.phrase.content %></p>
         </div>
-        <button class="taubenbutton"><%= link_to "unmark favorite", favorite_path(favorite), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to unmark this phrase?"} %></button>
-        <% end %>
       </div>
+          <%= link_to favorite_path(favorite), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to unmark this phrase?"} do %>
+          <button class="taubenbutton">Unmark favorite?</button>
+          <% end %>
     </div>
-  <% end %>
+          <% end %>
+    <% end %>
   </div>
-</div>
-</div>
+  </div>
 
 
           <%# <div class="pb-4">
