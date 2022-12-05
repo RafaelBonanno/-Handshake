@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :trips do
     resources :categories, only: %i[show index]
   end
-  resources :favorites, only: %i[destroy index]
+  resources :favorites, only: %i[destroy index show]
   get :dashboard, to: "pages#dashboard"
   post :favorites, to: "favorites#create_favorite"
 
