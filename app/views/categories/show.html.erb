@@ -44,9 +44,7 @@
             <% if PhraseCountry.where(country: @country).and(PhraseCountry.where(phrase: phrase)).first.nil? %>
               <div class="flipcard__face flipcard__face--back">
                 <p class="flipcard-text">WORK IN PROGRESS</p>
-                <div class="favorite">
-                  <%= link_to "❤️", favorites_path(phrase: phrase), data: {turbo_method: :post}, notice: "The phrase was added in your favorites" %>
-              </div>
+            </div>
             </div>
             <% else %>
             <div class="flipcard__face flipcard__face--back">

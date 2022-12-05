@@ -14,8 +14,6 @@
     padding: 16px;
     // padding-left: 20px;
   }
-.favorite {
-}
 
   @media (min-width: 100px) and (max-width: 575px) {
     .flipcards-container {
@@ -40,7 +38,10 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
 
+#title-flipcards {
+  padding-left: 40px;
 }
 
 // put border radius on the cards
@@ -66,11 +67,11 @@
   color: white;
   text-align: center;
   font-weight: bold;
-  font-size: 10px;
+  font-size: 16px;
   backface-visibility: hidden;
   align-items: center;
   vertical-align: center;
-  font-family: 'Nerko One', cursive;
+  font-family: 'Manrope', sans-serif;
 }
 
 .flipcard__face--front {

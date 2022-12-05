@@ -84,7 +84,7 @@ countries << Country.create!(
 
 countries << Country.create!(
   language: "Dutch",
-  name: "Neatherlands"
+  name: "Netherlands"
 )
 
 countries << Country.create!(
