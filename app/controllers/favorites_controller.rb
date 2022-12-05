@@ -10,7 +10,7 @@ class FavoritesController < ApplicationController
   def create_favorite
     @favorite = Favorite.new
     @favorite.user = current_user
-    @favorite.phrase_country_id = params[:phrase]
+    @favorite.phrase_country_id = params[:phrase_country]
     @favorite.save
     flash[:alert] = "The phrase was addded to your favs"
   end
