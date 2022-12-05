@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import ApiController from "./api_controller"
+application.register("api", ApiController)
+
 import ChangeTipController from "./change_tip_controller"
 application.register("change-tip", ChangeTipController)
 
