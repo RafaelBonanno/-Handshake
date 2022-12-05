@@ -23,7 +23,7 @@
       <div class="favcard" data-controller="api">
         <div class="logos-favcard">
           <div class="logo-favcard">
-            <i data-action="click->api#fetchSpeech" class="fa-solid fa-volume-high logo-favcard"></i>
+            <i data-action="click->api#fetchSpeech" class="fa-solid fa-volume-high logo-favcard" data-lang="<%= favorite.phrase_country.country.code %>"></i>
           </div>
           <div class="logo-favcard">
             <%= link_to favorite_path(favorite), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to unmark this phrase?"} do %>

@@ -8,13 +8,13 @@ export default class extends Controller {
     console.log(this.soundTarget)
   }
 
-  fetchSpeech(query) {
+  fetchSpeech(event) {
     console.log("I just clicked to ask the API")
     console.log(this.soundTarget.textContent)
-    query = this.soundTarget.textContent
-    fetch(`http://api.voicerss.org/?key=475e01e01a48448189640b5842ece531&hl=en-us&src=${query}`, {
-    method: "GET",
-    })
+    let query = this.soundTarget.textContent
+    let code = event.currentTarget.dataset.lang
+    fetch(`http://api.voicerss.org/?key=475e01e01a48448189640b5842ece531&hl=${code}&src=${query}`)
+      .then(response => new Audio(response.url).play())
 }
     // http://api.voicerss.org/?key=475e01e01a48448189640b5842ece531&hl=en-us&src=`${ }`
   }
