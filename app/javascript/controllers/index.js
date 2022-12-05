@@ -15,3 +15,6 @@ application.register("flip-phrases", FlipPhrasesController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import QuizController from "./quiz_controller"
+application.register("quiz", QuizController)
