@@ -21,4 +21,10 @@ class FavoritesController < ApplicationController
     redirect_to request.referer
   end
 
+  def show
+    @favorite = Favorite.find(params[:id])
+    @favorites = Favorite.where(user_id: current_user)
+    @translations = PhraseCountry.all
+  end
+
 end

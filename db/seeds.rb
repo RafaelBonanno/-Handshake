@@ -13,7 +13,7 @@ Country.destroy_all
 PhraseCountry.destroy_all
 
 user = User.create!(
-  email: "traveller@handshake.com",
+  email: "traveler@handshake.com",
   password: "123456",
   username: "Mr.Rails"
 )
@@ -21,6 +21,7 @@ user = User.create!(
 # CATEGORIES
 
 categories = []
+countries = []
 
 categories << Category.create!(
   name: "Shopping"
@@ -52,30 +53,85 @@ categories << Category.create!(
 
 # COUNTRIES
 
-germany = Country.create!(
+countries << Country.create!(
   language: "German",
   name: "Germany"
 )
 
-france = Country.create!(
+countries << Country.create!(
   language: "French",
   name: "France"
 )
 
-spain = Country.create!(
+countries << Country.create!(
   language: "Spanish",
   name: "Spain"
 )
 
-japan = Country.create!(
+countries << Country.create!(
   language: "Japanese",
   name: "Japan"
 )
 
-italy = Country.create!(
+countries << Country.create!(
   language: "Italian",
   name: "Italy"
 )
+
+countries << Country.create!(
+  language: "Dutch",
+  name: "Neatherlands"
+)
+
+countries << Country.create!(
+  language: "French",
+  name: "Belgium"
+)
+
+countries << Country.create!(
+  language: "English",
+  name: "UK"
+)
+
+countries << Country.create!(
+  language: "Swedish",
+  name: "Sweaden"
+)
+
+countries << Country.create!(
+  language: "Polish",
+  name: "Poland"
+)
+
+countries << Country.create!(
+  language: "English",
+  name: "Ireland"
+)
+
+countries << Country.create!(
+  language: "Hungarian",
+  name: "Hungary"
+)
+
+countries << Country.create!(
+  language: "Czech",
+  name: "Czechia"
+)
+
+countries << Country.create!(
+  language: "German",
+  name: "Austria"
+)
+
+countries << Country.create!(
+  language: "Portiguese",
+  name: "Portugal"
+)
+countries << Country.create!(
+  language: "Greek",
+  name: "Greece"
+)
+
 # TRIP
 
 my_trip = Trip.create!(
@@ -132,6 +188,24 @@ france_tip_5 = Tip.create!(
   content: "French people like being greeted in French",
   category_id: 5,
   country_id: 2
+)
+
+france_tip_6 = Tip.create!(
+  content: "The emegergency number is France is either 18 or 112",
+  category_id: 4,
+  country_id: 2
+)
+
+spanish_tip_1 = Tip.create!(
+  content: "Spanish dinner time is around 9PM",
+  category_id: 3,
+  country_id: 3
+)
+
+spanish_tip_1 = Tip.create!(
+  content: "Tapas restaurants are generally open until late in the morning",
+  category_id: 3,
+  country_id: 3
 )
 
 italian_tip_1 = Tip.create!(
@@ -229,25 +303,25 @@ Phrase.create!(
 # CORE PHRASES SOS
 
 Phrase.create!(
-  content: "I need help!",
+  content: "I need help! Do you speak English?",
   time_day: 1,
   category_id: 4
 )
 
 Phrase.create!(
-  content: "I am hurt!",
+  content: "I am hurt! Where is the nearest hospital?",
   time_day: 1,
   category_id: 4
 )
 
 Phrase.create!(
-  content: "There's a fire!",
+  content: "It's burning!",
   time_day: 1,
   category_id: 4
 )
 
 Phrase.create!(
-  content: "Call an ambulance!",
+  content: "I need an ambulance",
   time_day: 1,
   category_id: 4
 )
@@ -259,9 +333,47 @@ Phrase.create!(
 )
 
 Phrase.create!(
-  content: "I am lost, can you help?",
+  content: "I am lost, can you please help me?",
   time_day: 1,
   category_id: 4
+)
+
+#CORE PHRASES EATING OUT
+
+Phrase.create!(
+  content: "The bill, please",
+  time_day: 1,
+  category_id: 3
+)
+
+Phrase.create!(
+  content: "Do you have any vegeterian option?",
+  time_day: 1,
+  category_id: 3
+)
+
+Phrase.create!(
+  content: "Can I pay with card?",
+  time_day: 1,
+  category_id: 3
+)
+
+Phrase.create!(
+  content: "Do you have a menu with allergens?",
+  time_day: 1,
+  category_id: 3
+)
+
+Phrase.create!(
+  content: "Can we split the bill?",
+  time_day: 1,
+  category_id: 3
+)
+
+Phrase.create!(
+  content: "Is this dish spicy?",
+  time_day: 1,
+  category_id: 3
 )
 
 # CORE PHRASES GREETINGS
@@ -370,7 +482,7 @@ phrase_5_1 = PhraseCountry.create!(
   country_id: 1)
 
   phrase_6_1 = PhraseCountry.create!(
-    content: "Haben Sie das im Grosse?",
+    content: "Haben Sie das im Grosse...?",
     phrase_id: 6,
     country_id: 1
   )
@@ -541,4 +653,76 @@ PhraseCountry.create!(
   content: "Ich bin verloren, kannst du mir helfen?",
   phrase_id: 12,
   country_id: 1
+)
+
+PhraseCountry.create!(
+  content: "J'ai besoin d'aide! Vous parlez un peu anglais?",
+  phrase_id: 13,
+  country_id: 2
+)
+
+PhraseCountry.create!(
+  content: "Je me suis fait mal ! Ou est l'hopital le plus proche ?",
+  phrase_id: 14,
+  country_id: 2
+)
+
+PhraseCountry.create!(
+  content: "Ça brule!",
+  phrase_id: 15,
+  country_id: 2
+)
+
+PhraseCountry.create!(
+  content: "J'ai besoin d'une ambulance",
+  phrase_id: 16,
+  country_id: 2
+)
+
+PhraseCountry.create!(
+  content: "Appelez la police!",
+  phrase_id: 17,
+  country_id: 2
+)
+
+PhraseCountry.create!(
+  content: "Je suis perdu, vous pouvez m'aider?",
+  phrase_id: 18,
+  country_id: 2
+)
+
+PhraseCountry.create!(
+  content: "La cuenta, por favor",
+  phrase_id: 19,
+  country_id: 3
+)
+
+PhraseCountry.create!(
+  content: "¿Tienen alguna opción vegetariana?",
+  phrase_id: 20,
+  country_id: 3
+)
+
+PhraseCountry.create!(
+  content: "¿Puedo pagar con tarjeta?",
+  phrase_id: 21,
+  country_id: 3
+)
+
+PhraseCountry.create!(
+  content: "¿Tienen un menú con los alérgenos?",
+  phrase_id: 22,
+  country_id: 3
+)
+
+PhraseCountry.create!(
+  content: "¿Podemos dividir la cuenta?",
+  phrase_id: 23,
+  country_id: 3
+)
+
+PhraseCountry.create!(
+  content: "¿Este plato es picante?",
+  phrase_id: 24,
+  country_id: 3
 )
