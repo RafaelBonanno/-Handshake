@@ -6,6 +6,7 @@ import rangePlugin from "flatpickr/dist/plugins/rangePlugin"
 export default class extends Controller {
   static targets = ["startTime", "endTime"]
   connect() {
+
     console.log("death")
     flatpickr(this.startTimeTarget, {
       // enableTime: true,
