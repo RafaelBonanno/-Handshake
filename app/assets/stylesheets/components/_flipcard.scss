@@ -48,10 +48,10 @@
 // add padding to the flip fcards 16px
 // fixed taubenbutton tip height as big as widht
 
-.flipcard-text{
-  word-break: break-word;
-  vertical-align: center;
-}
+// .flipcard-text{
+//   word-break: break-word;
+//   vertical-align: center;
+// }
 
 .flipcard.is-flipped {
   transform: translateX(-100%) rotateY(-180deg);
@@ -102,6 +102,6 @@
   font-size: 30px;
 }
 
-.fa-heart {
+.heart-flipcard {
   font-size: 30px;
 }
