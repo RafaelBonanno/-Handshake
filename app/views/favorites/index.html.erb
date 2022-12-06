@@ -3,19 +3,21 @@
   </div>
   <div class="container mt-5">
     <div class="containergreeting mt-2">
-    
-      <h4>Howdy 👋🏼 <%= current_user.username %> !
-      <br>
-      Find below your favs 💚 
-      <h4>Train your skills. Practice your saved phrases:</h4>
-    <%= link_to "train", favoritegame_path %>
-      <br>
-      Happy learning !</h4>
+      <h4>Howdy 👋🏼 <%= current_user.username %> !</h4>
       <div class="logo-fav">
         <%= link_to :root do%>
           <%= image_tag "logocolor.png" %>
         <% end %>
       </div>
+    </div>
+      <%# <h6>Find below your favs 💚</h6> %>
+    <div class="container-playgame">
+      <h4>Train your skills! Practice your saved phrases:</h4>
+        <%= link_to favoritegame_path do %>
+            <button class="taubenbutton"> Train now !</button>
+        <% end %>
+      <br>
+      <h4>Happy learning !</h4>
     </div>
     <div class="favcards-container">
       <% @favorites.each do |favorite| %>
