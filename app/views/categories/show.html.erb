@@ -44,7 +44,7 @@
             <% if PhraseCountry.where(country: @country).and(PhraseCountry.where(phrase: phrase)).first.nil? %>
               <div class="flipcard__face flipcard__face--back">
                 <p class="flipcard-text">WORK IN PROGRESS</p>
-            </div>
+              </div>
             </div>
             <% else %>
             <div class="flipcard__face flipcard__face--back">
@@ -55,7 +55,7 @@
             <div class="favorite">
               <i data-action="click->api#fetchSpeech" class="fa-solid fa-volume-high logo-favcard" data-lang="<%= favorite_phrase.country.code %>"></i>
               <%= link_to favorites_path(phrase_country: favorite_phrase), data: {turbo_method: :post}, notice: "The phrase was added in your favorites" do %>
-              <i class="fa-solid fa-heart"></i>
+              <i class="fa-solid fa-heart heart-flipcard"></i>
               <% end %>
             </div>
             </div>

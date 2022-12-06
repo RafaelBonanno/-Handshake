@@ -1,7 +1,7 @@
 <div class="card-category-new" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)">
 </div>
-<div class="container mt-5">
-  <div class="containergreeting mt-3">
+<div class="container mt-4">
+  <div class="containergreeting">
     <h4>Howdy 👋🏼 <%= current_user.username %>!</h4>
     <%= link_to :root do%>
     <%= image_tag "logocolor.png" %>
@@ -66,6 +66,7 @@
   </div>
       <% end %>
       <hr>
+
   <div class="allfavorites">
     <h4>Your favorites</h4>
     <%= link_to "See all", favorites_path %>
@@ -85,6 +86,9 @@
         <p data-api-target="sound"><%= favorite.phrase_country.content %></p>
         <p><%= favorite.phrase_country.phrase.content %> in <em>  <strong><%= favorite.phrase_country.country.language %></strong></em></p>
       </div>
+          <%= link_to favorite_path(favorite), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to unmark this phrase?"} do %>
+          <button class="taubenbutton">Unmark <i class="fa-solid fa-heart-crack"></i></button>
+          <% end %>
     </div>
     <% end %>
   </div>

@@ -431,7 +431,7 @@ phrase_1_1 = PhraseCountry.create!(
 )
 
 phrase_1_2 = PhraseCountry.create!(
-  content: "Combien ca coute?",
+  content: "Combien ça coute?",
   phrase_id: 1,
   country_id: 2
 )
