@@ -66,7 +66,6 @@
   </div>
       <% end %>
       <hr>
-
   <div class="allfavorites">
     <h4>Your favorites</h4>
     <%= link_to "See all", favorites_path %>
@@ -86,9 +85,6 @@
         <p data-api-target="sound"><%= favorite.phrase_country.content %></p>
         <p><%= favorite.phrase_country.phrase.content %> in <em>  <strong><%= favorite.phrase_country.country.language %></strong></em></p>
       </div>
-          <%= link_to favorite_path(favorite), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to unmark this phrase?"} do %>
-          <button class="taubenbutton">Unmark <i class="fa-solid fa-heart-crack"></i></button>
-          <% end %>
     </div>
     <% end %>
   </div>
