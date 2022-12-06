@@ -1,25 +1,25 @@
 <%# This is to get the picture of the country in the banner %>
 <% if @country.name == "Germany" %>
-  <div class="card-category-new"style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)">
-    <h2 class="trip-to">Your trip to <%=  @country.name %></h2>
+  <div class="card-category-new"style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1623345805581-b7b352e73705?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Njh8fGdlcm1hbnl8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60)">
+    <h2 class="trip-to">Your trip to <strong><%=  @country.name %></h2></strong>
     <h4>From <%= @trip.start_date.strftime("%A %e %m %Y") %></h4>
     <h4>Until <%= @trip.end_date.strftime("%A %e %m %Y") %></h4>
   </div>
 <% elsif @country.name == "France" %>
-  <div class="card-category-new"style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1551865673-9e9ee4f8cd4c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJhbmNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60)">
-    <h3 class="trip-to">Your trip to <%=  @country.name %></h3>
+  <div class="card-category-new"style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGFyaXN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60)">
+    <h2 class="trip-to">Your trip to <strong><%=  @country.name %></h2></strong>
     <h4>From <%= @trip.start_date.strftime("%A %e %m %Y") %></h4>
     <h4>Until <%= @trip.end_date.strftime("%A %e %m %Y") %></h4>
   </div>
 <% elsif @country.name == "Spain" %>
-  <div class="card-category-new"style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1559386081-325882507af7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHNwYWlufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60)">
-    <h3 class="trip-to">Your trip to <%=  @country.name %></h3>
+  <div class="card-category-new"style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1539037116277-4db20889f2d4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fHNwYWlufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60)">
+    <h2 class="trip-to">Your trip to <strong><%=  @country.name %></h2></strong>
     <h4>From <%= @trip.start_date.strftime("%A %e %m %Y") %></h4>
     <h4>Until <%= @trip.end_date.strftime("%A %e %m %Y") %></h4>
   </div>
 <% else %>
   <div class="card-category-new"style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsbGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60)">
-    <h3 class="trip-to">Your trip to <%=  @country.name %></h3>
+    <h2 class="trip-to">Your trip to <%=  @country.name %></h2>
     <h4>From <%= @trip.start_date.strftime("%A %e %m %Y") %></h4>
     <h4>Until <%= @trip.end_date.strftime("%A %e %m %Y") %></h4>
   </div>
