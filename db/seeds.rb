@@ -181,7 +181,7 @@ france_tip_2 = Tip.create!(
 )
 
 france_tip_3 = Tip.create!(
-  content: "The emergency phone number in France is 112",
+  content: "Healthcare in France is free of charge for EU citizens",
   category_id: 4,
   country_id: 2
 )
@@ -199,7 +199,7 @@ france_tip_5 = Tip.create!(
 )
 
 france_tip_6 = Tip.create!(
-  content: "The emegergency number is France is either 18 or 112",
+  content: "The emergency number is France is either 18 or 112",
   category_id: 4,
   country_id: 2
 )
