@@ -6,15 +6,16 @@
 .favcard{
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  margin-bottom: 16px;
-  padding: 7px;
+  justify-content: space-between;
+  margin-bottom: 22px;
+  padding: 8px;
   gap: 2px;
   position: relative;
   width: 100%;
   height: 120px;
   background: #66BFBF;
   border-radius: 20px 20px 0px 20px;
+  padding-bottom: 124px;
 }
 
 
@@ -36,10 +37,8 @@
 .content-favcard {
   word-wrap: break-word;
   font-size: 14px;
-  width: 100%;
   display: flex;
   justify-content: space-between;
-  margin: auto;
 }
 
 
@@ -47,4 +46,44 @@
   .favcards-container {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+.right-favcard {
+  text-align: end;
+}
+
+.left-favcard {
+  padding-right: 16px;
+}
+
+.favcard .taubenbutton{
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  margin: auto;
+  width: 112px;
+  font-size: 18px;
+  padding: 6px;
+}
+
+.favorite {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: baseline;
+}
+
+.container-playgame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  margin-top: 24px
+}
+
+.container-playgame a {
+  margin: auto;
+  margin-bottom: 18px;
+  margin-top: 18px;
 }

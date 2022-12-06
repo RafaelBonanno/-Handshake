@@ -27,15 +27,15 @@
 <h2> IN PROGRESS </h2>
 <% else %>
 <div class="tips-container" data-controller="change-tip" data-change-tip-tips-value="<%= @tips.map(&:content) %>" >
-  <button data-action="click->change-tip#changeTip" class="taubenbutton">Next tip!</button>
-  <h3 data-change-tip-target="tip"><%= @tips.sample.content %></h3>
+
+  <button data-action="click->change-tip#changeTip" class="taubenbutton">Next tip <i class="fa-regular fa-lightbulb"></i></button>
+  <h3 id="tips-content" data-change-tip-target="tip"><%= @tips.sample.content %></h3>
   <%# <h3 data-change-tip-target="tip2" style="display-hidden"><%= @tips.sample.content</h3> %>
 <% end %>
 </div>
-    <h2 id="title-flipcards">Phrases:</h2>
     <div class="flipcards-container">
       <% @phrases.each do |phrase| %>
-      <div class="flipcard-container">
+      <div class="flipcard-container" data-controller="api">
         <div class="scene">
           <div class="flipcard" data-controller="flip-phrases" data-action="click->flip-phrases#flipPhrase" data-flip-phrases-target="flipcard">
             <div class="flipcard__face flipcard__face--front">
@@ -44,15 +44,18 @@
             <% if PhraseCountry.where(country: @country).and(PhraseCountry.where(phrase: phrase)).first.nil? %>
               <div class="flipcard__face flipcard__face--back">
                 <p class="flipcard-text">WORK IN PROGRESS</p>
-            </div>
+              </div>
             </div>
             <% else %>
             <div class="flipcard__face flipcard__face--back">
             <% favorite_phrase = PhraseCountry.where(country: @country).and(PhraseCountry.where(phrase: phrase)).first %>
+            <div data-api-target="sound">
               <p class="flipcard-text"><%= PhraseCountry.where(country: @country).and(PhraseCountry.where(phrase: phrase)).first.content %></p>
+            </div>
             <div class="favorite">
+              <i data-action="click->api#fetchSpeech" class="fa-solid fa-volume-high logo-favcard" data-lang="<%= favorite_phrase.country.code %>"></i>
               <%= link_to favorites_path(phrase_country: favorite_phrase), data: {turbo_method: :post}, notice: "The phrase was added in your favorites" do %>
-              <i class="fa-solid fa-heart"></i>
+              <i class="fa-solid fa-heart heart-flipcard"></i>
               <% end %>
             </div>
             </div>

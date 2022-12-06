@@ -163,7 +163,7 @@ german_tip_2 = Tip.create!(
 )
 
 german_tip_3 = Tip.create!(
-  content: "The emergency telefon number in Germany is 112",
+  content: "The emergency phone number in Germany is 112",
   category_id: 4,
   country_id: 1
 )
@@ -181,7 +181,7 @@ france_tip_2 = Tip.create!(
 )
 
 france_tip_3 = Tip.create!(
-  content: "The emergency telefon number in France is 112",
+  content: "Healthcare in France is free of charge for EU citizens",
   category_id: 4,
   country_id: 2
 )
@@ -199,7 +199,7 @@ france_tip_5 = Tip.create!(
 )
 
 france_tip_6 = Tip.create!(
-  content: "The emegergency number is France is either 18 or 112",
+  content: "The emergency number is France is either 18 or 112",
   category_id: 4,
   country_id: 2
 )
@@ -272,20 +272,20 @@ phrase_6 = Phrase.create!(
 )
 
 phrase_4 = Phrase.create!(
-  content: "Can I return this item",
+  content: "Do you have an online shop?",
   time_day: 1,
   category_id: 1
 )
 
 phrase_5 = Phrase.create!(
-  content: "Where is the changing room?",
+  content: "Where can I pay?",
   time_day: 1,
   category_id: 1)
 
   phrase_6 = Phrase.create!(
-    content: "Do you have this in size...?",
+    content: "I need a bigger size",
     time_day: 1,
-    category_id: 1
+    category_id: 2
   )
 
 # CORE PHRASES DIRECTIONS
@@ -431,7 +431,7 @@ phrase_1_1 = PhraseCountry.create!(
 )
 
 phrase_1_2 = PhraseCountry.create!(
-  content: "Combien ca coute?",
+  content: "Combien ça coute?",
   phrase_id: 1,
   country_id: 2
 )
@@ -461,7 +461,7 @@ phrase_2_5 = PhraseCountry.create!(
 )
 
 phrase_3_1 = PhraseCountry.create!(
-  content: "Mit karte bitte",
+  content: "Mit Karte bitte",
   phrase_id: 3,
   country_id: 1
 )
@@ -479,7 +479,7 @@ phrase_3_5 = PhraseCountry.create!(
 )
 
 phrase_4_1 = PhraseCountry.create!(
-  content: "Kann ich diesen Artikel umtauschen?",
+  content: "kann ich diesen Artikel zurückgeben?",
   phrase_id: 4,
   country_id: 1
 )
@@ -599,7 +599,7 @@ PhraseCountry.create!(
 
 PhraseCountry.create!(
   content: "Ich brauche Hilfe!",
-  phrase_id: 7,
+  phrase_id: 13,
   country_id: 1
 )
 
@@ -611,7 +611,7 @@ PhraseCountry.create!(
 
 PhraseCountry.create!(
   content: "Ich bin verletzt!",
-  phrase_id: 8,
+  phrase_id: 14,
   country_id: 1
 )
 
@@ -733,4 +733,40 @@ PhraseCountry.create!(
   content: "¿Este plato es picante?",
   phrase_id: 24,
   country_id: 3
+)
+
+Phrase.create!(
+  content: "I'd like to take this home please",
+  time_day: 1,
+  category_id: 3
+)
+
+Phrase.create!(
+  content: "The food was delicious",
+  time_day: 1,
+  category_id: 3
+)
+
+PhraseCountry.create!(
+  content: "Voy a llevarme esto a casa por favor",
+  country_id: 3,
+  phrase_id: 31
+)
+
+PhraseCountry.create!(
+  content: "La comida estaba deliciosa",
+  country_id: 3,
+  phrase_id: 32
+)
+
+PhraseCountry.create!(
+  content: "Gibt es bei euch einen Online-Shop?",
+  country_id: 1,
+  phrase_id: 7
+)
+
+PhraseCountry.create!(
+  content: "Wo kann ich bezahlen?",
+  country_id: 1,
+  phrase_id: 8
 )

@@ -1,19 +1,19 @@
 <div class="card-category-new" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1496950866446-3253e1470e8e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)">
 </div>
-<div class="container mt-5">
-  <div class="containergreeting mt-3">
-    <h4>Howdy 👋🏼 <%= current_user.username %>!</h4>
-    <%= link_to :root do%>
-    <%= image_tag "logocolor.png" %>
-    <% end %>
-  </div>
-  <div class="container-dashboard">
+<div class="containergreeting">
+  <h4>Howdy 👋🏼 <%= current_user.username %>!</h4>
+  <%= link_to :root do%>
+  <%= image_tag "logocolor.png" %>
+  <% end %>
+</div>
+  <div class="containerdashboard">
     <% if @trips.empty? %>
       <div class="text-dashboard">
         <h1> You have no trips yet !</h1>
       </div>
     <% else %>
-      <div class="container p-2">
+
+    <h4>Your trips</h4>
     <% current_user.trips.each do |trip| %>
         <%= link_to trip_path(trip) do%>
           <div class="card-product">
@@ -23,19 +23,19 @@
               <% elsif trip.country.name == "France" %>
                 <img src="https://images.unsplash.com/photo-1551865673-9e9ee4f8cd4c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJhbmNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="France">
               <% elsif trip.country.name == "Spain" %>
-                <img src="https://images.unsplash.com/photo-1559386081-325882507af7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHNwYWlufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Spaim">
+                <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fHNwYWlufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Spaim">
               <% else %>
                 <img src="https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsbGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="All">
               <% end %>
-      </div>
-      <div class="card-product-infos">
-        <h2>Your trip to <%= trip.country.name %></h2>
-        <p>From <%=trip.start_date.strftime("%A %e %m %Y")%></p>
-        <p>Until <%=trip.end_date.strftime("%A %e %m %Y")  %></p>
-    <% end %>
-        <p class="btn taubenbutton" data-bs-toggle="modal" data-bs-target="#tripModal<%= trip.id %>">Manage this trip</p>
-      </div>
-  </div>
+            </div>
+            <div class="card-product-infos">
+              <h2><%= trip.country.name %></h2>
+              <p>From <%=trip.start_date.strftime("%A %e %m %Y")%></p>
+              <p>Until <%=trip.end_date.strftime("%A %e %m %Y")  %></p>
+              <% end %>
+              <p class="btn taubenbutton" data-bs-toggle="modal" data-bs-target="#tripModal<%= trip.id %>">Manage this trip</p>
+            </div>
+          </div>
 
   <%#MODAL %>
 
@@ -64,40 +64,29 @@
       </div>
     </div>
   </div>
-      <% end %>
-      <hr>
-  <div class="favcards-container">
-    <h4>Your saved phrases</h4>
-    <% @favorites.each do |favorite| %>
-    <div class="favcard">
-      <div class="content-favcard">
-        <div class="left-favcard">
-          <p><%= favorite.phrase_country.content %>
-          <br>
-          in <strong><%= favorite.phrase_country.country.language %></p></strong>
+  <% end %>
+  <hr>
+  <div class="allfavorites">
+    <h4>Your favorites</h4>
+    <%= link_to "See all", favorites_path %>
+  </div>
+  <div class="speechcontainer">
+    <% @favorites.sample(2).each do |favorite| %>
+    <div class="bubble bubble-bottom-left"  data-controller="api">
+      <div class="bubbletop">
+        <div class="audio">
+          <i data-action="click->api#fetchSpeech" class="fa-solid fa-play logo-favcard" data-lang="<%= favorite.phrase_country.country.code %>"></i>
         </div>
-        <div class="right-card">
-          <p>means
-          <br>
-          <%= favorite.phrase_country.phrase.content %></p>
-        </div>
-        <button class="taubenbutton"><%= link_to "unmark favorite", favorite_path(favorite), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to unmark this phrase?"} %></button>
+        <%= link_to favorite_path(favorite), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to unmark this phrase?"} do %>
+              <i class="fa-solid fa-trash-can logo-favcard"></i>
         <% end %>
       </div>
+      <div class="bubblebottom">
+        <p data-api-target="sound"><%= favorite.phrase_country.content %></p>
+        <p><%= favorite.phrase_country.phrase.content %> in <em>  <strong><%= favorite.phrase_country.country.language %></strong></em></p>
+      </div>
     </div>
-  <% end %>
+    <% end %>
   </div>
+  <% end %>
 </div>
-</div>
-
-
-          <%# <div class="pb-4">
-            <p><strong>Status</strong></p>
-            <% if trip.status == "pending" %>
-              <%# <p>coming soon !</p> %>
-            <%# <% elsif trip.status == "archived" %>
-              <%# <p>you came back already `;)` </p> %>
-            <%# <% else %>
-              <%# <p>how's the trip going?</p> %>
-            <%# <% end %>
-          <%# </div> %>
