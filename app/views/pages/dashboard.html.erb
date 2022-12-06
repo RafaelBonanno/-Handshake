@@ -69,23 +69,24 @@
   <h4>Your saved phrases</h4>
   <div class="speechcontainer">
     <% @favorites.each do |favorite| %>
-    <div class="bubble bubble-bottom-left" contenteditable data-controller="api">
-      <div class="audio">
+    <div class="bubble bubble-bottom-left"  data-controller="api">
+      <div class="bubbletop">
+        <div class="audio">
           <i data-action="click->api#fetchSpeech" class="fa-solid fa-play logo-favcard" data-lang="<%= favorite.phrase_country.country.code %>"></i>
-      </div>
-      <div class="leftbubble">
-        <p>In <strong><em><%= favorite.phrase_country.country.language %></em></strong></p>
-        <p><%= favorite.phrase_country.content %></p>
-        <strong></strong>
-      </div>
-      <div class="delete">
+        </div>
         <%= link_to favorite_path(favorite), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to unmark this phrase?"} do %>
-        <i class="fa-regular fa-trash-can"></i>
+              <i class="fa-solid fa-trash-can logo-favcard"></i>
         <% end %>
       </div>
-      <div class="rightbubble">
-        <p>means</p>
-        <p><%= favorite.phrase_country.phrase.content %></p>
+      <div class="bubblebottom">
+        <p><strong><em><%= favorite.phrase_country.country.language %>:</em></strong>
+        <br>
+        <div data-api-target="sound">
+          <%= favorite.phrase_country.content %></p>
+        </div>
+        <p>English:
+        <br>
+        <%= favorite.phrase_country.phrase.content %></p>
       </div>
     </div>
     <% end %>

@@ -33,9 +33,9 @@
   <%# <h3 data-change-tip-target="tip2" style="display-hidden"><%= @tips.sample.content</h3> %>
 <% end %>
 </div>
-    <div class="flipcards-container" data-controller="api">
+    <div class="flipcards-container">
       <% @phrases.each do |phrase| %>
-      <div class="flipcard-container">
+      <div class="flipcard-container" data-controller="api">
         <div class="scene">
           <div class="flipcard" data-controller="flip-phrases" data-action="click->flip-phrases#flipPhrase" data-flip-phrases-target="flipcard">
             <div class="flipcard__face flipcard__face--front">

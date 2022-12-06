@@ -86,18 +86,24 @@
   color: #000;
   margin-bottom: 50px;
   opacity: 90%;
+  height: 120px;
 }
 
-
-
-.leftbubble {
-  margin-top: 16px;
+.bubbletop {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  position: relative;
+  bottom: 14px;
 }
 
-.rightbubble {
-  margin-top: 16px;
+.bubblebottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  bottom: 20px;
 }
-
 
 .bubble-bottom-left:before {
   content: "";
@@ -119,4 +125,10 @@
 a {
   text-decoration: none;
   color: black;
+}
+
+.audio {
+  font-size: 30px;
+  position: relative;
+  left: 18px;
 }
