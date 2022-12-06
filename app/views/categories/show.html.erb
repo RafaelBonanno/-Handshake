@@ -33,7 +33,7 @@
 <% end %>
 </div>
     <h2 id="title-flipcards">Phrases:</h2>
-    <div class="flipcards-container">
+    <div class="flipcards-container" data-controller="api">
       <% @phrases.each do |phrase| %>
       <div class="flipcard-container">
         <div class="scene">
@@ -49,8 +49,11 @@
             <% else %>
             <div class="flipcard__face flipcard__face--back">
             <% favorite_phrase = PhraseCountry.where(country: @country).and(PhraseCountry.where(phrase: phrase)).first %>
+            <div data-api-target="sound">
               <p class="flipcard-text"><%= PhraseCountry.where(country: @country).and(PhraseCountry.where(phrase: phrase)).first.content %></p>
+            </div>
             <div class="favorite">
+              <i data-action="click->api#fetchSpeech" class="fa-solid fa-volume-high logo-favcard" data-lang="<%= favorite_phrase.country.code %>"></i>
               <%= link_to favorites_path(phrase_country: favorite_phrase), data: {turbo_method: :post}, notice: "The phrase was added in your favorites" do %>
               <i class="fa-solid fa-heart"></i>
               <% end %>
