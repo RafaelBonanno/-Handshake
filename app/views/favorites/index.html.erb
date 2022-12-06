@@ -3,6 +3,7 @@
   </div>
   <div class="container mt-5">
     <div class="containergreeting mt-2">
+    
       <h4>Howdy 👋🏼 <%= current_user.username %> !
       <br>
       Find below your favs 💚 
@@ -10,9 +11,11 @@
     <%= link_to "train", favoritegame_path %>
       <br>
       Happy learning !</h4>
-      <%= link_to :root do%>
-      <%= image_tag "logocolor.png" %>
-      <% end %>
+      <div class="logo-fav">
+        <%= link_to :root do%>
+          <%= image_tag "logocolor.png" %>
+        <% end %>
+      </div>
     </div>
     <div class="favcards-container">
       <% @favorites.each do |favorite| %>

@@ -48,6 +48,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-bottom: 8px;
 }
 
 .favorite-dashboard {
@@ -63,11 +64,11 @@
 }
 
 .favcard .taubenbutton{
-  border-radius: 50px;
+  border-radius: 4px;
   text-decoration: none;
   color: white;
   margin: auto;
-  height: 100%;
+  width: 112px;
   font-size: 18px;
-  padding: 4px
+  padding: 6px;
 }
