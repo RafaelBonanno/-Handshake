@@ -10,6 +10,9 @@ application.register("api", ApiController)
 import ChangeTipController from "./change_tip_controller"
 application.register("change-tip", ChangeTipController)
 
+import FlatpickrController from "./flatpickr_controller"
+application.register("flatpickr", FlatpickrController)
+
 import FlipPhrasesController from "./flip_phrases_controller"
 application.register("flip-phrases", FlipPhrasesController)
 
