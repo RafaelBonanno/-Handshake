@@ -66,9 +66,12 @@
   </div>
       <% end %>
       <hr>
-  <h4>Your saved phrases</h4>
+  <div class="allfavorites">
+    <h4>Your favorites</h4>
+    <%= link_to "See all", favorites_path %>
+  </div>
   <div class="speechcontainer">
-    <% @favorites.each do |favorite| %>
+    <% @favorites.sample(2).each do |favorite| %>
     <div class="bubble bubble-bottom-left"  data-controller="api">
       <div class="bubbletop">
         <div class="audio">
@@ -79,14 +82,8 @@
         <% end %>
       </div>
       <div class="bubblebottom">
-        <p><strong><em><%= favorite.phrase_country.country.language %>:</em></strong>
-        <br>
-        <div data-api-target="sound">
-          <%= favorite.phrase_country.content %></p>
-        </div>
-        <p>English:
-        <br>
-        <%= favorite.phrase_country.phrase.content %></p>
+        <p data-api-target="sound"><%= favorite.phrase_country.content %></p>
+        <p><%= favorite.phrase_country.phrase.content %> in <em>  <strong><%= favorite.phrase_country.country.language %></strong></em></p>
       </div>
     </div>
     <% end %>
