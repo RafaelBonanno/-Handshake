@@ -66,40 +66,31 @@
   </div>
       <% end %>
       <hr>
-  <div class="favcards-container">
-    <h4>Some of your saved favorites !</h4>
 
+  <div class="allfavorites">
+    <h4>Your favorites</h4>
+    <%= link_to "See all", favorites_path %>
+  </div>
+  <div class="speechcontainer">
     <% @favorites.sample(2).each do |favorite| %>
-    <div class="favcard">
-      <div class="content-favcard">
-        <div class="left-favcard">
-          <p><%= favorite.phrase_country.content %>
-          <br>
-          in <strong><%= favorite.phrase_country.country.language %></p></strong>
+    <div class="bubble bubble-bottom-left"  data-controller="api">
+      <div class="bubbletop">
+        <div class="audio">
+          <i data-action="click->api#fetchSpeech" class="fa-solid fa-play logo-favcard" data-lang="<%= favorite.phrase_country.country.code %>"></i>
         </div>
-        <div class="right-card">
-          <p>means
-          <br>
-          <%= favorite.phrase_country.phrase.content %></p>
-        </div>
+        <%= link_to favorite_path(favorite), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to unmark this phrase?"} do %>
+              <i class="fa-solid fa-trash-can logo-favcard"></i>
+        <% end %>
+      </div>
+      <div class="bubblebottom">
+        <p data-api-target="sound"><%= favorite.phrase_country.content %></p>
+        <p><%= favorite.phrase_country.phrase.content %> in <em>  <strong><%= favorite.phrase_country.country.language %></strong></em></p>
       </div>
           <%= link_to favorite_path(favorite), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to unmark this phrase?"} do %>
           <button class="taubenbutton">Unmark <i class="fa-solid fa-heart-crack"></i></button>
           <% end %>
     </div>
-          <% end %>
     <% end %>
   </div>
-  </div>
-
-
-          <%# <div class="pb-4">
-            <p><strong>Status</strong></p>
-            <% if trip.status == "pending" %>
-              <%# <p>coming soon !</p> %>
-            <%# <% elsif trip.status == "archived" %>
-              <%# <p>you came back already `;)` </p> %>
-            <%# <% else %>
-              <%# <p>how's the trip going?</p> %>
-            <%# <% end %>
-          <%# </div> %>
+  <% end %>
+</div>
