@@ -78,33 +78,33 @@
 .bubble {
   position: relative;
   font-family:'Manrope', sans-serif;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
-  width: 350px;
+  width: 100%;
   background: #66BFBF;;
   border-radius: 40px;
-  padding: 14px;
+  padding: 12px;
   text-align: center;
   color: #000;
-  margin-bottom: 50px;
   opacity: 90%;
   height: 120px;
+  margin: 20px 0px 74px 0px
 }
 
 .bubbletop {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 22px;
   position: relative;
-  bottom: 14px;
+  bottom: 22px;
+  right: 8px;
 }
 
 .bubblebottom {
   display: flex;
   flex-direction: column;
-  padding: 5px;
   position: relative;
-  bottom: 35px;
+  bottom: 48px;
 }
 
 .bubble-bottom-left:before {
@@ -144,4 +144,3 @@ a {
   display: flex;
   justify-content: space-between;
 }
-
