@@ -163,7 +163,7 @@ german_tip_2 = Tip.create!(
 )
 
 german_tip_3 = Tip.create!(
-  content: "The emergency telefon number in Germany is 112",
+  content: "The emergency phone number in Germany is 112",
   category_id: 4,
   country_id: 1
 )
@@ -181,7 +181,7 @@ france_tip_2 = Tip.create!(
 )
 
 france_tip_3 = Tip.create!(
-  content: "The emergency telefon number in France is 112",
+  content: "The emergency phone number in France is 112",
   category_id: 4,
   country_id: 2
 )
