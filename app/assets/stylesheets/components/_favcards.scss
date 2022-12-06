@@ -78,10 +78,12 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  text-align: center
+  text-align: center;
+  margin-top: 24px
 }
 
 .container-playgame a {
   margin: auto;
-  margin-bottom: 10px
-} 
+  margin-bottom: 18px;
+  margin-top: 18px;
+}
