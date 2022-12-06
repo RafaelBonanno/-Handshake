@@ -5,16 +5,16 @@
 </div>
 <div class="container p-4">
   <%= simple_form_for @trip do |f| %>
-              <%# <%= f.input :start_date, as: :date, html5: true, :label => "When does your trip start?" %>
-              <%= f.input :start_date, as: :date,
-                wrapper_html: { class: "mb-4" },
-                label_html: { class: "form-label text-secondary fw-bold" },
-                input_html: { data: { flatpickr_target: "startTime" }, id: "startDate"  } %>
-              <%# <%= f.input :end_date, as: :date, html5: true, :label => "When does your trip end?" %>
-              <%= f.input :end_date, as: :date,
-                 wrapper_html: { class: "mb-4" },
-                 label_html: { class: "form-label text-secondary fw-bold" },
-                input_html: { data: { flatpickr_target: "endTime" }, id: "endDate" } %>
+              <%= f.input :start_date, as: :date, html5: true, :label => "When does your trip start?"%>
+              <%# <%= f.input :start_date, as: :date,
+                # wrapper_html: { class: "mb-4" },
+                # label_html: { class: "form-label text-secondary fw-bold" },
+                # input_html: { data: { flatpickr_target: "startTime" }, id: "startDate"  } %>
+              <%= f.input :end_date, as: :date, html5: true, :label => "When does your trip end?" %>
+              <%# <%= f.input :end_date, as: :date, %>
+                 <%# wrapper_html: { class: "mb-4" }, %>
+                 <%# label_html: { class: "form-label text-secondary fw-bold" }, %>
+                <%# input_html: { data: { flatpickr_target: "endTime" }, id: "endDate" } %>
             <%= f.association :country, :label => "Where are you going?" %>
             <%= f.submit value: "Let's go!", class: 'btn taubenbutton' %>
           <% end %>
