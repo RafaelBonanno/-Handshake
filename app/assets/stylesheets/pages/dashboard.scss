@@ -84,39 +84,40 @@
 .bubble {
   position: relative;
   font-family:'Manrope', sans-serif;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
-  width: 350px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  width: 100%;
   border-radius: 40px;
-  padding: 14px;
+  padding: 12px;
   text-align: center;
   color: #000;
-  margin-bottom: 50px;
   opacity: 90%;
   height: 120px;
+  margin: 20px 0px 74px 0px
 }
 
 .bubbletop {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 22px;
   position: relative;
-  bottom: 14px;
-  color: #4D94A0;
-
-  a {
+  bottom: 22px;
+  width: 100%;
+  right: 8px;
+  
+    a {
   color: #4D94A0
   }
+
 }
 
 .bubblebottom {
   display: flex;
   flex-direction: column;
-  padding: 5px;
   position: relative;
-  bottom: 35px;
+  bottom: 48px;
 }
 
 .bubble-bottom-left:before {

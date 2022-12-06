@@ -72,3 +72,18 @@
   width: 100%;
   align-items: baseline;
 }
+
+.container-playgame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  margin-top: 24px
+}
+
+.container-playgame a {
+  margin: auto;
+  margin-bottom: 18px;
+  margin-top: 18px;
+}

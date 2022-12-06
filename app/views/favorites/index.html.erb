@@ -1,20 +1,23 @@
 <div class="card-category-new" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80)">
-  </div>
+    <h2>Your favorites!</h2>
+</div>
   <div class="container mt-5">
     <div class="containergreeting mt-2">
-    
-      <h4>Howdy 👋🏼 <%= current_user.username %> !
-      <br>
-      Find below your favs 💚 
-      <h4>Train your skills. Practice your saved phrases:</h4>
-    <%= link_to "train", favoritegame_path %>
-      <br>
-      Happy learning !</h4>
+      <h4>Howdy 👋🏼 <%= current_user.username %> !</h4>
       <div class="logo-fav">
         <%= link_to :root do%>
           <%= image_tag "logocolor.png" %>
         <% end %>
       </div>
+    </div>
+      <%#  %>
+    <div class="container-playgame">
+      <h4>Train your skills! Practice your saved phrases:</h4>
+        <%= link_to favoritegame_path do %>
+            <button class="taubenbutton"> Train now !</button>
+        <% end %>
+      <br>
+      <h4>Happy learning !</h4>
     </div>
   <div class="speechcontainer">
     <% @favorites.each do |favorite| %>
@@ -34,4 +37,4 @@
     </div>
     <% end %>
   </div>
-
+</div>
