@@ -81,6 +81,7 @@
   background-position: center;
   height: 180px;
   justify-content: center;
+  display: flex;
   justify-items: center;
   align-items: center;
   color: rgb(255, 255, 255);
@@ -91,6 +92,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   text-decoration: none;
   text-align: center;
+  font-family: 'Manrope', sans-serif;
 }
 
 
@@ -111,8 +113,8 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: column;
-  font-family: 'Catamaran', sans-serif;
   opacity: 100%;
+  font-family: 'Manrope', sans-serif;
 }
 
 .cards-list {
