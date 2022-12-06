@@ -1,5 +1,4 @@
-<div class="background-color">
-  <div class="card-category-new" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80)">
+<div class="card-category-new" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80)">
   </div>
   <div class="container mt-5">
     <div class="containergreeting mt-2">
@@ -10,6 +9,7 @@
         <% end %>
       </div>
     </div>
+
       <%# <h6>Find below your favs 💚</h6> %>
     <div class="container-playgame">
       <h4>Train your skills! Practice your saved phrases:</h4>
@@ -19,36 +19,22 @@
       <br>
       <h4>Happy learning !</h4>
     </div>
-    <div class="favcards-container">
-      <% @favorites.each do |favorite| %>
-      <div class="favcard" data-controller="api">
-        <div class="logos-favcard">
-          <div class="logo-favcard">
-            <i data-action="click->api#fetchSpeech" class="fa-solid fa-volume-high logo-favcard" data-lang="<%= favorite.phrase_country.country.code %>"></i>
-          </div>
-          <div class="logo-favcard">
-            <%= link_to favorite_path(favorite), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to unmark this phrase?"} do %>
+  <div class="speechcontainer">
+    <% @favorites.each do |favorite| %>
+    <div class="bubble bubble-bottom-left"  data-controller="api">
+      <div class="bubbletop">
+        <div class="audio">
+          <i data-action="click->api#fetchSpeech" class="fa-solid fa-play logo-favcard" data-lang="<%= favorite.phrase_country.country.code %>"></i>
+        </div>
+        <%= link_to favorite_path(favorite), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to unmark this phrase?"} do %>
               <i class="fa-solid fa-trash-can logo-favcard"></i>
-            <% end %>
-          </div>
-        </div>
-        <%# </div> %>
-        <div class="content-favcard">
-          <div class="left-favcard">
-            <p>In <em><%= favorite.phrase_country.country.language %></em>
-            <div data-api-target="sound" class="phrase-trs-favcard">
-              <strong><%= favorite.phrase_country.content %></strong></p>
-            </div>
-          </div>
-          <div class="right-favcard">
-            <p>actually means:
-            <div class="phrase-favcard">
-              <strong><%= favorite.phrase_country.phrase.content %></strong></p>
-            </div>
-          </div>
-        </div>
+        <% end %>
       </div>
-      <% end %>
+      <div class="bubblebottom">
+        <p data-api-target="sound"><%= favorite.phrase_country.content %></p>
+        <p><%= favorite.phrase_country.phrase.content %> in <em>  <strong><%= favorite.phrase_country.country.language %></strong></em></p>
+      </div>
     </div>
+    <% end %>
   </div>
-</div>
+

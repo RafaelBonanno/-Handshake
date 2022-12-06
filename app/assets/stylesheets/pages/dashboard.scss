@@ -64,3 +64,84 @@
 }
 
 
+.favcard .taubenbutton{
+  border-radius: 50px;
+  text-decoration: none;
+  color: white;
+  margin: auto;
+  height: 100%;
+  font-size: 18px;
+  padding: 4px
+}
+
+
+.bubble {
+  position: relative;
+  font-family:'Manrope', sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  width: 350px;
+  background: #66BFBF;;
+  border-radius: 40px;
+  padding: 14px;
+  text-align: center;
+  color: #000;
+  margin-bottom: 50px;
+  opacity: 90%;
+  height: 120px;
+}
+
+.bubbletop {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  position: relative;
+  bottom: 14px;
+}
+
+.bubblebottom {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  position: relative;
+  bottom: 35px;
+}
+
+.bubble-bottom-left:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 24px solid #66BFBF;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #66BFBF;
+  border-bottom: 20px solid transparent;
+  left: 32px;
+  bottom: -24px;
+}
+
+.speechcontainer {
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.audio {
+  font-size: 30px;
+  position: relative;
+  left: 18px;
+}
+
+.language {
+  display: flex;
+  justify-content: space-between;
+}
+
+.allfavorites {
+  display: flex;
+  justify-content: space-between;
+}
+

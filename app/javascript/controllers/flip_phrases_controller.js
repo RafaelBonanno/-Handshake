@@ -9,7 +9,6 @@ export default class extends Controller {
 
   flipPhrase() {
     this.flipcardTarget.classList.toggle('is-flipped')
-    console.log("hello from flipcard controller")
   }
 
 }
