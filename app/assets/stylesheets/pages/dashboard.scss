@@ -37,7 +37,7 @@
 }
 
 .card-product .card-product-infos {
-  padding: 22px;
+  padding: 25px;
 }
 
 .card-product a {
@@ -48,7 +48,13 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 18px;
+  margin-top: 40px;
+  padding: 10px;
+}
+
+.containerdashboard {
+  padding: 20px;
 }
 
 .favorite-dashboard {
@@ -144,4 +150,3 @@ a {
   display: flex;
   justify-content: space-between;
 }
-
