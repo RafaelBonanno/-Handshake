@@ -44,7 +44,7 @@
             <% if PhraseCountry.where(country: @country).and(PhraseCountry.where(phrase: phrase)).first.nil? %>
               <div class="flipcard__face flipcard__face--back">
                 <p class="flipcard-text">WORK IN PROGRESS</p>
-            </div>
+              </div>
             </div>
             <% else %>
             <div class="flipcard__face flipcard__face--back">

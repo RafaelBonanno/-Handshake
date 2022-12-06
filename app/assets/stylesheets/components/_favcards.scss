@@ -55,3 +55,20 @@
 .left-favcard {
   padding-right: 16px;
 }
+
+.favcard .taubenbutton{
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  margin: auto;
+  width: 112px;
+  font-size: 18px;
+  padding: 6px;
+}
+
+.favorite {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: baseline;
+}
