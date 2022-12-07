@@ -12,6 +12,7 @@ class FavoritesController < ApplicationController
     @favorite.user = current_user
     @favorite.phrase_country_id = params[:phrase_country]
     @favorite.save
+    redirect_to request.referer
     flash[:alert] = "The phrase was addded to your favs"
   end
 

@@ -54,7 +54,7 @@
             </div>
             <div class="favorite">
               <i data-action="click->api#fetchSpeech" class="fa-solid fa-volume-high logo-favcard" data-lang="<%= favorite_phrase.country.code %>"></i>
-              <%= link_to favorites_path(phrase_country: favorite_phrase), data: {turbo_method: :post}, notice: "The phrase was added in your favorites" do %>
+              <%= link_to favorites_path(phrase_country: favorite_phrase), data: {turbo_method: :post}, alert: "The phrase was added in your favorites" do %>
               <i class="fa-solid fa-heart heart-flipcard"></i>
               <% end %>
             </div>
