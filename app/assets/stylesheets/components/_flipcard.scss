@@ -106,3 +106,33 @@
 .heart-flipcard {
   font-size: 30px;
 }
+
+.favorite a {
+  color: #4D94A0
+}
+
+.large-font{
+  font-size:xxx-large;
+}
+.top-20{
+  position:relative;
+  top:20vh;
+}
+ion-icon.active{
+  animation:like 0.5s 1;
+  fill:#4D94A0;
+  stroke:none;
+}
+ion-icon{
+  fill:transparent;
+  stroke:black;
+  stroke-width:30;
+  transition:all 0.5s;
+}
+
+
+@-webkit-keyframes like {
+  0%   { transform: scale(1); }
+  90%   { transform: scale(1.2); }
+  100% { transform: scale(1.1); }
+}
