@@ -1,17 +1,14 @@
 <div class="background-color">
   <div class="card-category-new" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3R1ZHl8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60)">
-  </div>
-<div class="container mt-5">
-  <div class="containergreeting mt-2">
-    <h4>Howdy 👋🏼 <%= current_user.username %> !
-    <br>
-    Happy learning !</h4>
-    <%= link_to :root do%>
-    <%= image_tag "logocolor.png" %>
-    <% end %>
-  </div>
-<div class="phrasecontainer">
-  <h3>What does the following mean in English?</h3>
+</div>
+<div class="containergreeting">
+  <h4>Happy learning  👋🏼 <%= current_user.username %>!</h4>
+  <%= link_to :root do%>
+  <%= image_tag "logocolor.png" %>
+  <% end %>
+</div>
+<div class="gamecontainer">
+  <h4>What does the following mean in English?</h4>
   <% guessphrase = @favorites.sample.phrase_country %>
   <div data-controller="api">
   <div data-api-target="sound">
@@ -19,25 +16,24 @@
   </div>
     <i data-action="click->api#fetchSpeech" class="fa-solid fa-volume-high logo-favcard" data-lang="<%= guessphrase.country.code %>"></i>
   </div>
-</div>
-<br>
-<br>
-<h4>Select the write answer</h4>
-<% answers = [] %>
-<% guessoptions = @phrases.sample(3) %>
-<% guessoptions.each do |option| %>
-<% answers << option.content %>
-<% end %>
-<% answers << guessphrase.phrase.content %>
-<% randomanswers = answers.shuffle %>
-<ul>
-<div data-controller="quiz">
-  <% randomanswers.each do |answer| %>
-    <li data-action="click->quiz#rightAnswer" data-correct-answer="<%= answer == guessphrase.phrase.content %>" class="btn btn-primary"><%= answer %></li>
+  <br>
+  <br>
+  <h4>Select the right answer</h4>
+  <% answers = [] %>
+  <% guessoptions = @phrases.sample(3) %>
+  <% guessoptions.each do |option| %>
+  <% answers << option.content %>
   <% end %>
-</div>
-</ul>
+  <% answers << guessphrase.phrase.content %>
+  <% randomanswers = answers.shuffle %>
+  <ul>
+  <div data-controller="quiz">
+    <% randomanswers.each do |answer| %>
+      <li data-action="click->quiz#rightAnswer" data-correct-answer="<%= answer == guessphrase.phrase.content %>" class="btn btn-primary"><%= answer %></li>
+    <% end %>
+  </div>
+  </ul>
 
-<%= link_to "Next phrase", favoritegame_path %>
+  <%= link_to "Next phrase", favoritegame_path %>
 
 </div>
