@@ -2,14 +2,13 @@
   <div class="card-category-new" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3R1ZHl8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60)">
 </div>
 <div class="containergreeting">
-  <h4>Howdy 👋🏼 <%= current_user.username %>!</h4>
+  <h4>Happy learning  👋🏼 <%= current_user.username %>!</h4>
   <%= link_to :root do%>
   <%= image_tag "logocolor.png" %>
   <% end %>
 </div>
 <div class="gamecontainer">
-  <h3>Happy learning !</h3>
-  <h3>What does the following mean in English?</h3>
+  <h4>What does the following mean in English?</h4>
   <% guessphrase = @favorites.sample.phrase_country %>
   <div data-controller="api">
   <div data-api-target="sound">
@@ -19,7 +18,7 @@
   </div>
   <br>
   <br>
-  <h4>Select the write answer</h4>
+  <h4>Select the right answer</h4>
   <% answers = [] %>
   <% guessoptions = @phrases.sample(3) %>
   <% guessoptions.each do |option| %>

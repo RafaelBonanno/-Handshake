@@ -12,12 +12,10 @@
     </div>
       <%#  %>
     <div class="container-playgame">
-      <h4>Train your skills! Practice your favs:</h4>
+        <h4>Practice your skills</h4>
         <%= link_to favoritegame_path do %>
-            <button class="taubenbutton"> Train now !</button>
-        <% end %>
-      <br>
-      <h4>Happy learning !</h4>
+        <button class="taubenbutton">Train now</button>
+      <% end %>
     </div>
   <div class="speechcontainer">
     <% @favorites.each do |favorite| %>
