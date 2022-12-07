@@ -76,7 +76,8 @@
 }
 
 .flipcard__face--front {
-  background: #66BFBF;
+  // background: #66BFBF;
+  background-image: linear-gradient(to left bottom, #66bfbf, #70c1c1, #79c3c3, #82c5c5, #8bc7c7);
   width: 100%
 }
 
