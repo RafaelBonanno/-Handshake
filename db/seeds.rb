@@ -778,6 +778,12 @@ german_tip = Tip.create!(
   country_id: 1
 )
 
+german_tip = Tip.create!(
+  content: "Lidl - the german brand - is the most spread out supermarket chain throughout Europe",
+  category_id: 1,
+  country_id: 1
+)
+
 france_tip = Tip.create!(
   content: "If you are in pain in France, we say that you are in 'pain au chocolat'",
   category_id: 4,
@@ -786,6 +792,12 @@ france_tip = Tip.create!(
 
 france_tip = Tip.create!(
   content: "On the 14th of July, we celebrate the firefighters all throughout France - it's called 'Le bal des pompiers'",
+  category_id: 4,
+  country_id: 2
+)
+
+france_tip = Tip.create!(
+  content: "To get out of many dodgy situations, don't hesitate to use 'Putain!' and say it louder every time",
   category_id: 4,
   country_id: 2
 )
