@@ -9,12 +9,12 @@
 </div>
 <div class="gamecontainer">
   <h5>What does the following mean in English?</h5>
-  <% guessphrase = @favorites.sample.phrase_country %>
-  <div data-controller="api">
-  <div data-api-target="sound">
-    <p class="btn btn-secondary"><%= guessphrase.content %></p>
-  </div>
-    <i data-action="click->api#fetchSpeech" class="fa-solid fa-volume-high logo-favcard" data-lang="<%= guessphrase.country.code %>"></i>
+  <div class="phrasecontainer" data-controller="api">
+    <% guessphrase = @favorites.sample.phrase_country %>
+    <div data-api-target="sound">
+      <p class="btn taubenbutton"><%= guessphrase.content %></p>
+    </div>
+      <i data-action="click->api#fetchSpeech" class="fa-solid fa-volume-high logo-favcard" data-lang="<%= guessphrase.country.code %>"></i>
   </div>
   <br>
   <br>
@@ -27,7 +27,7 @@
   <% answers << guessphrase.phrase.content %>
   <% randomanswers = answers.shuffle %>
   <ul>
-  <div data-controller="quiz">
+  <div class="quizcontainer" data-controller="quiz">
     <% randomanswers.each do |answer| %>
       <li data-action="click->quiz#rightAnswer" data-correct-answer="<%= answer == guessphrase.phrase.content %>" class="btn btn-primary"><%= answer %></li>
     <% end %>
