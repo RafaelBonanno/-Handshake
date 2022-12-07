@@ -142,12 +142,6 @@ countries << Country.create!(
 
 # TRIP
 
-my_trip = Trip.create!(
-  start_date: "29/11/2022",
-  end_date: "30/11/2022",
-  user_id: 1,
-  country_id: 1
-)
 # TIPS
 
 german_tip_1 = Tip.create!(
@@ -229,7 +223,7 @@ italian_tip_2 = Tip.create!(
 )
 
 itaian_tip_3 = Tip.create!(
-  content: "The emergency telefon number in Italy is 112",
+  content: "The emergency telephone number in Italy is 112",
   category_id: 4,
   country_id: 5
 )
@@ -769,4 +763,29 @@ PhraseCountry.create!(
   content: "Wo kann ich bezahlen?",
   country_id: 1,
   phrase_id: 8
+)
+
+
+german_tip = Tip.create!(
+  content: "Be nice to Frau Netto and you will be blessed with good cookies",
+  category_id: 1,
+  country_id: 1
+)
+
+german_tip = Tip.create!(
+  content: "From mid-April to late June, its 'Spargelzeit' (asparagus) time!",
+  category_id: 1,
+  country_id: 1
+)
+
+france_tip = Tip.create!(
+  content: "If you are in pain in France, we say that you are in 'pain au chocolat'",
+  category_id: 4,
+  country_id: 2
+)
+
+france_tip = Tip.create!(
+  content: "On the 14th of July, we celebrate the firefighters all throughout France - it's called 'Le bal des pompiers'",
+  category_id: 4,
+  country_id: 2
 )
