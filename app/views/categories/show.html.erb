@@ -24,7 +24,7 @@
 </div>
 <% end %>
 <% if @tips.empty? %>
-<h2> IN PROGRESS </h2>
+<p> IN PROGRESS </p>
 <% else %>
 <div class="tips-container" data-controller="change-tip" data-change-tip-tips-value="<%= @tips.map(&:content) %>" >
 
