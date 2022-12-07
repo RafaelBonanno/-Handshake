@@ -6,11 +6,55 @@
 }
 
 .phrasecontainer {
-  display: flex;
-  justify-content: space-between;
   padding: 22px;
 }
 
 .quizcontainer{
-  padding: 22px;
+
+  ul {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  }
+}
+
+.btn-ghost {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.btn-gradient {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: linear-gradient(#167FFB, #0F60C4);
+  transition: background 0.3s ease;
+  border: 1px solid #0F60C4;
+}
+
+
+.gamephrase {
+  background-color: #4D94A0;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 18px;
+  border-radius: 100px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.buttonwin {
+  display: none;
 }

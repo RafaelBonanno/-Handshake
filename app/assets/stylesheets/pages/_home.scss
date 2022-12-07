@@ -99,6 +99,7 @@ h1, h2, h3, h4, h5 {
   display: block;
   font-size: 16px;
   border-radius: 100px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 .taubenbuttonhome {
   background-color: #4D94A0;
@@ -113,6 +114,7 @@ h1, h2, h3, h4, h5 {
   width: 255px;
   margin: 0 auto;
   margin-top: 100px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .cancelbutton{
