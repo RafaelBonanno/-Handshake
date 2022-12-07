@@ -27,7 +27,6 @@
 <p> IN PROGRESS </p>
 <% else %>
 <div class="tips-container" data-controller="change-tip" data-change-tip-tips-value="<%= @tips.map(&:content) %>" >
-
   <button data-action="click->change-tip#changeTip" class="taubenbutton">Next tip <i class="fa-regular fa-lightbulb"></i></button>
   <h3 id="tips-content" data-change-tip-target="tip"><%= @tips.sample.content %></h3>
   <%# <h3 data-change-tip-target="tip2" style="display-hidden"><%= @tips.sample.content</h3> %>
