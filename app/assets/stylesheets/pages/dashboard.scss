@@ -103,14 +103,52 @@
   justify-content: space-between;
   padding: 10px;
   position: relative;
-  bottom: 14px;
+  bottom: 18px;
   color: #4D94A0;
   margin-bottom: 8px;
+  font-size: 18px;
 
   a {
   color: #4D94A0
   }
 }
+
+.soundicon i {
+  font-size: 30px;
+}
+
+
+// TRY
+
+.box1 {
+  width: 340px;
+  margin: 50px auto;
+  border: 2px solid #4D94A0;
+  padding: 20px;
+  font-size: 18px;
+  text-align: center;
+  color: black;
+  position: relative;
+  height: 150px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  font-family:'Manrope', sans-serif;
+}
+
+.sb5:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid #4D94A0;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #4D94A0;
+  border-bottom: 10px solid transparent;
+  right: -20px;
+  top: 6px;
+}
+
 
 .bubblebottom {
   display: flex;
@@ -118,6 +156,7 @@
   padding: 5px;
   position: relative;
   bottom: 35px;
+  font-size: 18px;
 }
 
 .bubble-bottom-left:before {
