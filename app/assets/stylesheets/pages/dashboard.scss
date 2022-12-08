@@ -98,12 +98,13 @@
   height: 120px;
 }
 
+
 .bubbletop {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
-  padding: 10px;
-  position: relative;
-  bottom: 18px;
+  padding: 0px 16px 0px 0px;
   color: #4D94A0;
   margin-bottom: 8px;
   font-size: 18px;
@@ -113,9 +114,29 @@
   }
 }
 
-.soundicon i {
-  font-size: 30px;
+.soundicon {
+  border-style: solid;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 7px;
+  gap: 10px;
+  width: 45px;
+  height: 45px;
+  background: #4D94A0;
+  border-radius: 12px 0px 16px 0px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 }
+
+.soundicon i {
+  font-size: 28px;
+  left: 0px;
+  top: -11px;
+  color: white;
+}
+
 
 
 // TRY
@@ -124,14 +145,13 @@
   width: 340px;
   margin: 50px auto;
   border: 2px solid #4D94A0;
-  padding: 20px;
   font-size: 18px;
   text-align: center;
   color: black;
   position: relative;
   height: 150px;
   background-color: white;
-  border-radius: 5px;
+  border-radius: 16px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   font-family:'Manrope', sans-serif;
 }
@@ -154,8 +174,6 @@
   display: flex;
   flex-direction: column;
   padding: 1px;
-  position: relative;
-  bottom: 38px;
   font-size: 18px;
 }
 
