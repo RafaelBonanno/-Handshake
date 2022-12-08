@@ -17,7 +17,7 @@
         <button class="taubenbutton">Train now</button>
       <% end %>
     </div>
-<div class="speechcontainer">
+<div class="speechcontainerfav">
     <% @favorites.each do |favorite| %>
     <div class="box1 sb5" data-controller="api">
       <div class="bubbletop">
@@ -29,10 +29,10 @@
         <i class="fa-solid fa-trash-can logo-favcard"></i>
       <% end %>
       </div>
-        <div class="bubblebottom">
-          <p data-api-target="sound"><%= favorite.phrase_country.content %></p>
-          <p><i class="fa-solid fa-language h4 text-left">&nbsp&nbsp&nbsp</i><%= favorite.phrase_country.phrase.content %></p>
-        </div>
+      <div class="bubblebottom">
+        <p data-api-target="sound"><%= favorite.phrase_country.content %></p>
+        <p><i class="fa-solid fa-language h4 text-left">&nbsp&nbsp&nbsp</i><%= favorite.phrase_country.phrase.content %></p>
+      </div>
     </div>
     <% end %>
   </div>
