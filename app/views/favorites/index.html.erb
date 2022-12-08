@@ -14,14 +14,14 @@
         <%= link_to favoritegame_path do %>
         <button class="taubenbutton">Train now</button>
       <% end %>
-    </div>  
+    </div>
 <div class="speechcontainerfav">
 <% @countries_unique.each do |country_unique| %>
   <% country_unique.phrase_countries.joins(:favorite).where(favorite: {user: current_user}).each do |favorite| %>
     <%# <% @favorites.each do |favorite| %>
     <div class="box1 sb5" data-controller="api">
       <div class="bubbletop">
-        <div class="soundicon"data-action="click->api#fetchSpeech" >
+        <div class="soundicon"data-action="click->api#fetchSpeech" data-lang="<%= favorite.country.code %>" >
           <i  class="fa-solid fa-play logo-favcard" ></i>
         </div>
         <strong><%= favorite.country.language %>:</strong>
