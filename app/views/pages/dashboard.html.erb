@@ -15,28 +15,30 @@
     </div>
   <% else %>
   <h4 class="mb-3">Your trips</h4>
-  <% current_user.trips.each do |trip| %>
-      <%= link_to trip_path(trip) do%>
-        <div class="card-product">
-          <div class="card-image">
-            <% if trip.country.name == "Germany" %>
-              <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Germany">
-            <% elsif trip.country.name == "France" %>
-              <img src="https://images.unsplash.com/photo-1551865673-9e9ee4f8cd4c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJhbmNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="France">
-            <% elsif trip.country.name == "Spain" %>
-              <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fHNwYWlufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Spaim">
-            <% else %>
-              <img src="https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsbGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="All">
-            <% end %>
+  <div class="tripcardcontainer">
+    <% current_user.trips.each do |trip| %>
+        <%= link_to trip_path(trip) do%>
+          <div class="card-product">
+            <div class="card-image">
+              <% if trip.country.name == "Germany" %>
+                <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Germany">
+              <% elsif trip.country.name == "France" %>
+                <img src="https://images.unsplash.com/photo-1551865673-9e9ee4f8cd4c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZnJhbmNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="France">
+              <% elsif trip.country.name == "Spain" %>
+                <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fHNwYWlufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Spaim">
+              <% else %>
+                <img src="https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dHJhdmVsbGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="All">
+              <% end %>
+            </div>
+            <div class="card-product-infos">
+              <h2><%= trip.country.name %></h2>
+              <p>From <%=trip.start_date.strftime("%A %e %m %Y")%></p>
+              <p>Until <%=trip.end_date.strftime("%A %e %m %Y")  %></p>
+              <% end %>
+              <p class="btn taubenbutton" data-bs-toggle="modal" data-bs-target="#tripModal<%= trip.id %>">Manage this trip</p>
+            </div>
           </div>
-          <div class="card-product-infos">
-            <h2><%= trip.country.name %></h2>
-            <p>From <%=trip.start_date.strftime("%A %e %m %Y")%></p>
-            <p>Until <%=trip.end_date.strftime("%A %e %m %Y")  %></p>
-            <% end %>
-            <p class="btn taubenbutton" data-bs-toggle="modal" data-bs-target="#tripModal<%= trip.id %>">Manage this trip</p>
-          </div>
-        </div>
+
 
   <%#MODAL %>
 
@@ -66,6 +68,7 @@
     </div>
   </div>
   <% end %>
+  </div>
   <hr>
   <div class="allfavorites">
     <h4>Your favorites</h4>
