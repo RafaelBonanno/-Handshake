@@ -19,8 +19,8 @@
     <% @favorites.each do |favorite| %>
     <div class="box1 sb5" data-controller="api">
       <div class="bubbletop">
-        <div class="soundicon">
-          <i data-action="click->api#fetchSpeech" class="fa-solid fa-play logo-favcard" data-lang="<%= favorite.phrase_country.country.code %>"></i>
+        <div class="soundicon"data-action="click->api#fetchSpeech" data-lang="<%= favorite.phrase_country.country.code %>">
+          <i  class="fa-solid fa-play logo-favcard" ></i>
         </div>
         <strong><%= favorite.phrase_country.country.language %>:</strong>
       <%= link_to favorite_path(favorite), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to unmark this phrase?"} do %>
