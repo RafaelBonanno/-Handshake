@@ -85,10 +85,14 @@
   align-items: flex-start;
   padding: 8px 8px;
   gap: 10px;
-  background: #4D94A0;;
+  background: #4D94A0;
   border: 1px solid #83BAC3;
   color: white;
-  border-radius: 0px 0px 8px 8px
+  border-radius: 0px 0px 8px 8px;
+  padding-bottom: 2px;
+  position: absolute;
+  right: 120px;
+  top: -2px;
 }
 
 .bubble {
