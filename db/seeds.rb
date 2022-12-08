@@ -387,7 +387,7 @@ Phrase.create!(
 )
 
 Phrase.create!(
-  content: "Goodbye!",
+  content: "Good bye!",
   time_day: 1,
   category_id: 5
 )
@@ -800,4 +800,22 @@ france_tip = Tip.create!(
   content: "To get out of many dodgy situations, don't hesitate to use 'Putain!' and say it louder every time",
   category_id: 4,
   country_id: 2
+)
+
+PhraseCountry.create!(
+  content: "¡Hasta luego!",
+  phrase_id: 26,
+  country_id: 3
+)
+
+PhraseCountry.create(
+  content: "Necesito ayuda. ¿Hablas inglés?",
+  phrase_id: 13,
+  country_id: 3
+)
+
+PhraseCountry.create!(
+  content: "¿En qué dirección es...?",
+  phrase_id: 10,
+  country_id: 3
 )
