@@ -16,24 +16,27 @@
       <% end %>
     </div>
 <div class="speechcontainerfav">
-    <% @favorites.each do |favorite| %>
+<% @countries_unique.each do |country_unique| %>
+  <% country_unique.phrase_countries.joins(:favorite).where(favorite: {user: current_user}).each do |favorite| %>
+    <%# <% @favorites.each do |favorite| %>
     <div class="box1 sb5" data-controller="api">
       <div class="bubbletop">
-        <div class="soundicon"data-action="click->api#fetchSpeech" data-lang="<%= favorite.phrase_country.country.code %>">
+        <div class="soundicon"data-action="click->api#fetchSpeech" data-lang="<%= favorite.country.code %>" >
           <i  class="fa-solid fa-play logo-favcard" ></i>
         </div>
-        <div class="languagebox">
-          <%= favorite.phrase_country.country.language %>
-        </div>
+        <strong><%= favorite.country.language %>:</strong>
       <%= link_to favorite_path(favorite), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to unmark this phrase?"} do %>
         <i class="fa-solid fa-trash-can logo-favcard"></i>
       <% end %>
       </div>
       <div class="bubblebottom">
-        <p data-api-target="sound"><%= favorite.phrase_country.content %></p>
-          <p><em>means:</em>&nbsp&nbsp&nbsp&nbsp<%= favorite.phrase_country.phrase.content %></p>
+        <p data-api-target="sound"><%= favorite.content %></p>
+        <p><i class="fa-solid fa-language h4 text-left">&nbsp&nbsp&nbsp</i><%= favorite.phrase.content %></p>
+        <%# <% raise %>
+
       </div>
     </div>
+    <% end %>
     <% end %>
   </div>
 </div>
