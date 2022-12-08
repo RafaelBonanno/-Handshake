@@ -88,3 +88,17 @@
   margin-bottom: 18px;
   margin-top: 18px;
 }
+
+.header-flexbox {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row nowrap;
+  margin: 60px;
+  h2 {
+    font-size: 30px;
+  }
+  img {
+    width: 135px;
+    opacity: 100%
+  }
+}
