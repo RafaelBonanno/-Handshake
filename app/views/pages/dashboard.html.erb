@@ -78,14 +78,16 @@
         <div class="soundicon">
           <i data-action="click->api#fetchSpeech" class="fa-solid fa-play logo-favcard" data-lang="<%= favorite.phrase_country.country.code %>"></i>
         </div>
-        <strong><%= favorite.phrase_country.country.language %>:</strong>
-      <%= link_to favorite_path(favorite), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to unmark this phrase?"} do %>
+        <div class="languagebox">
+          <%= favorite.phrase_country.country.language %>
+        </div>
+        <%= link_to favorite_path(favorite), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to unmark this phrase?"} do %>
         <i class="fa-solid fa-trash-can logo-favcard"></i>
       <% end %>
       </div>
         <div class="bubblebottom">
           <p data-api-target="sound"><%= favorite.phrase_country.content %></p>
-          <p><i class="fa-solid fa-language h4 text-left">&nbsp&nbsp&nbsp</i><%= favorite.phrase_country.phrase.content %></p>
+          <p><em>means:</em>&nbsp&nbsp&nbsp&nbsp<%= favorite.phrase_country.phrase.content %></p>
         </div>
     </div>
     <% end %>
