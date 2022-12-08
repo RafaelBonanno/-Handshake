@@ -1,6 +1,12 @@
 class FavoritesController < ApplicationController
   def index
     @favorites = Favorite.where(user: current_user)
+    @countries = []
+    @favorites.each do |favorite|
+      @countries << favorite.phrase_country.country
+    end
+    @countries_unique = @countries.uniq
+    # raise
   end
 
   def new
