@@ -38,6 +38,7 @@
   margin: 8px;
   margin-bottom: 40px;
   margin-top: 30px;
+  margin-left: 0px;
 }
 
 .card-product .card-product-infos {
@@ -52,12 +53,20 @@
 
 .containergreeting {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px;
-  margin: 0 auto;
-  margin-top: 25px;
+  justify-content: space-between;
+
 }
+
+.dashboardgreetings{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 42px;
+  margin-bottom: -8px;
+  margin-top: 39px;
+  margin-left: 0px;
+  margin-right: 15px;
+}
+
 
 .favorite-dashboard {
   padding: 12px;
@@ -92,7 +101,7 @@
   align-items: flex-start;
   padding: 8px 8px;
   gap: 10px;
-  background: #4D94A0;
+  background: #83BAC3;
   border: 1px solid #83BAC3;
   color: white;
   border-radius: 0px 0px 8px 8px;
@@ -162,10 +171,14 @@
 
 // TRY
 
+.lighttauben {
+  color: #83BAC3;
+}
+
 .box1 {
   width: 340px;
   margin: 50px auto;
-  border: 2px solid #4D94A0;
+  border: 2px solid #71c4d2;
   font-size: 18px;
   text-align: center;
   color: black;
