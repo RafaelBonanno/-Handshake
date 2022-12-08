@@ -79,16 +79,21 @@
   justify-content: space-between;
   width: 100%;
   align-items: center;
-  margin-left: 25px;
+  margin-top: 10px;
   padding: 10px;
+  flex-direction: column;
+  .taubenbutton {
+    margin-left: 5px;
+  }
+  h4{
+    margin-bottom: -8px;
+  }
 }
-
 .container-playgame a {
   margin: auto;
   margin-bottom: 18px;
   margin-top: 18px;
 }
-
 .header-flexbox {
   display: flex;
   justify-content: space-between;
